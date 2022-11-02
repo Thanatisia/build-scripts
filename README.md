@@ -50,10 +50,19 @@ and it will be usable as a simplified autobuilder (similar to ArchLinux's AUR PK
     - Assuming the following:
         * Distribution : Debian
         * Package Manager : apt
-    - Curling the target script
-        ```console
-        curl -sSL https://raw.githubusercontent.com/Thanatisia/build-scripts/[branch-name]/packages/[application-name]/[package-manager]/compile.sh
-        ```
+    - via Curl
+        - Viewing the target script
+            ```console
+            curl -sSL https://raw.githubusercontent.com/Thanatisia/build-scripts/[branch-name]/packages/[application-name]/[package-manager]/compile.sh
+            ```
+        - Executing the target script without downloading
+            ```console
+            curl -sSL https://raw.githubusercontent.com/Thanatisia/build-scripts/[branch-name]/packages/[application-name]/[package-manager]/compile.sh | bash
+            ```
+        - Downloading the target script
+            ```console
+            curl -O -L https://raw.githubusercontent.com/Thanatisia/build-scripts/[branch-name]/packages/[application-name]/[package-manager]/compile.sh
+            ```
 
 ## Wiki
 ### Repository Structure

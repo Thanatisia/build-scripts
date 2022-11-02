@@ -4,14 +4,14 @@ Neovim Install
 
 Method: Compile from Scratch to ensure that it is on the latest version
 
-Target Base System: Debian
-Target Package Manager: apt
+Target Base System: ArchLinux 
+Target Package Manager: pacman
 "
 
 # Build Info
 CC="make"
 CFLAGS="CMAKE_BUILD_TYPE=RelWithDebInfo"
-DEPENDENCIES=(ninja-build gettext libtool libtool-bin autoconf automake cmake g++ pkg-config unzip curl doxygen)
+DEPENDENCIES=(ninja gettext libtool autoconf automake cmake base-devel pkg-config unzip curl doxygen)
 
 # Package Information
 PKG_AUTHOR="neovim"
@@ -26,7 +26,7 @@ setup()
     "
 
     # Install dependencies
-    apt install "${DEPENDENCIES[@]}"
+    pacman -S "${DEPENDENCIES[@]}"
 
     # Clone repository
     git clone "$SRC_URL"
@@ -68,13 +68,7 @@ clean()
 main()
 {
     build
-
-    echo -e "" 
-
     install
-
-    echo -e "" 
-
     clean
 }
 
