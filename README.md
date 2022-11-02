@@ -55,16 +55,16 @@ and it will be usable as a simplified autobuilder (similar to ArchLinux's AUR PK
     - via Curl
         - Viewing the target script
             ```console
-            curl -sSL https://raw.githubusercontent.com/Thanatisia/build-scripts/[branch-name]/packages/[author-name]/[application-name]/[package-manager]/compile.sh
+            curl -sSL https://raw.githubusercontent.com/Thanatisia/build-scripts/[branch-name]/packages/[author-name]/[application-name]/[version-number]/[package-manager]/compile.sh
             ```
         - Executing the target script without downloading
             + Please do this only if you have already read the script.
             ```console
-            curl -sSL https://raw.githubusercontent.com/Thanatisia/build-scripts/[branch-name]/packages/[author-name]/[application-name]/[package-manager]/compile.sh | bash
+            curl -sSL https://raw.githubusercontent.com/Thanatisia/build-scripts/[branch-name]/packages/[author-name]/[application-name]/[version-number]/[package-manager]/compile.sh | bash
             ```
         - Downloading the target script
             ```console
-            curl -O -L https://raw.githubusercontent.com/Thanatisia/build-scripts/[branch-name]/packages/[author-name]/[application-name]/[package-manager]/compile.sh
+            curl -O -L https://raw.githubusercontent.com/Thanatisia/build-scripts/[branch-name]/packages/[author-name]/[application-name]/[version-number]/[package-manager]/compile.sh
             ```
 
 ## Wiki
@@ -78,8 +78,10 @@ and it will be usable as a simplified autobuilder (similar to ArchLinux's AUR PK
                     |
                     |-- [application-name]/
                         |
-                        |-- apt/ : For apt-based (i.e. Debian) dependencies
-                        |-- pacman/ : For pacman-based (i.e. ArchLinux) dependencies
+                        |-- [version-number]/
+                            |
+                            |-- apt/ : For apt-based (i.e. Debian) dependencies
+                            |-- pacman/ : For pacman-based (i.e. ArchLinux) dependencies
 ```
 
 ### TODO List/Pipeline
