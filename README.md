@@ -16,6 +16,7 @@ and it will be usable as a simplified autobuilder (similar to ArchLinux's AUR PK
  * Note that the above are just generic steps I simplified based off most that I saw, these steps will change from developer to developer.
  * This is not a replacement for Makefile buildscripts in of itself, this is realistically more of an add-on that aims to be a form of standardization to make manual source code compilation easier to do.
  * Ensure that Terms and Conditions for projects and repositories are followed in the case whereby licensing is in place (i.e. GPL3, MIT License, Apache etc)
+ * Do read the script before using it, as a Rule of Thumb, it is generally not recommended to pipe to bash directly due to safety and security unless you have already done so
 
 
 ## FAQ
@@ -56,6 +57,7 @@ and it will be usable as a simplified autobuilder (similar to ArchLinux's AUR PK
             curl -sSL https://raw.githubusercontent.com/Thanatisia/build-scripts/[branch-name]/packages/[application-name]/[package-manager]/compile.sh
             ```
         - Executing the target script without downloading
+            + Please do this only if you have already read the script.
             ```console
             curl -sSL https://raw.githubusercontent.com/Thanatisia/build-scripts/[branch-name]/packages/[application-name]/[package-manager]/compile.sh | bash
             ```
