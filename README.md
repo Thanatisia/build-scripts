@@ -1,6 +1,7 @@
 # Build scripts Compilation
 
 Collection/Compilation of package build/compile scripts that will simplify the manual installation/compilation process by basically automatically
+
     * Prepare Dependencies
     * downloading/clones the source code,
     * Changing directory into the source code
@@ -21,7 +22,7 @@ and it will be usable as a simplified autobuilder (similar to ArchLinux's AUR PK
 
 ## FAQ
 1. How can you help?
-    + Please refer to the [CONTRIBUTING.md](contributing.md) file for more details on how to help, but
+    + Please refer to the [CONTRIBUTING.md](CONTRIBUTING.md) file for more details on how to help, but
     - The following are a summary on things to take note of when contributing to ensure competency and standardization so as to maintain usability.
         1. Use similar variable naming convention schemes (pretty much good quality naming) for understandability
             - Examples
@@ -54,16 +55,16 @@ and it will be usable as a simplified autobuilder (similar to ArchLinux's AUR PK
     - via Curl
         - Viewing the target script
             ```console
-            curl -sSL https://raw.githubusercontent.com/Thanatisia/build-scripts/[branch-name]/packages/[application-name]/[package-manager]/compile.sh
+            curl -sSL https://raw.githubusercontent.com/Thanatisia/build-scripts/[branch-name]/packages/[author-name]/[application-name]/[package-manager]/compile.sh
             ```
         - Executing the target script without downloading
             + Please do this only if you have already read the script.
             ```console
-            curl -sSL https://raw.githubusercontent.com/Thanatisia/build-scripts/[branch-name]/packages/[application-name]/[package-manager]/compile.sh | bash
+            curl -sSL https://raw.githubusercontent.com/Thanatisia/build-scripts/[branch-name]/packages/[author-name]/[application-name]/[package-manager]/compile.sh | bash
             ```
         - Downloading the target script
             ```console
-            curl -O -L https://raw.githubusercontent.com/Thanatisia/build-scripts/[branch-name]/packages/[application-name]/[package-manager]/compile.sh
+            curl -O -L https://raw.githubusercontent.com/Thanatisia/build-scripts/[branch-name]/packages/[author-name]/[application-name]/[package-manager]/compile.sh
             ```
 
 ## Wiki
@@ -73,9 +74,12 @@ and it will be usable as a simplified autobuilder (similar to ArchLinux's AUR PK
             |
             |-- packages/
                 |
-                |-- [application-name]/
+                |-- [author-name]/
                     |
-                    |-- debian/ : For apt-based (i.e. Debian) dependencies
+                    |-- [application-name]/
+                        |
+                        |-- apt/ : For apt-based (i.e. Debian) dependencies
+                        |-- pacman/ : For pacman-based (i.e. ArchLinux) dependencies
 ```
 
 ### TODO List/Pipeline
