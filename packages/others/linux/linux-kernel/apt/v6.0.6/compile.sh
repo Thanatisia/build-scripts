@@ -16,7 +16,7 @@ DEPENDENCIES=(git wget build-essential ncurses-dev xz-utils bc libncurses-dev bi
 # Package Information
 PKG_AUTHOR="linux"
 PKG_NAME="kernel"
-PKG_VERS="6.X"
+PKG_VERS="6.x"
 PKG_FILENAME="linux-6.0.6"
 SRC_URL="https://cdn.kernel.org/pub/$PKG_AUTHOR/$PKG_NAME/v$PKG_VERS/$PKG_FILENAME.tar.xz"
 
@@ -45,10 +45,10 @@ setup()
     wget "$SRC_URL"
 
     # Extract tar.xz file
-    unxz -v $PKG_FILENAME
+    unxz -v $PKG_FILENAME.tar.xz
 
     # Extract linux kernel tarball
-    tar xvzf "$PKG_FILENAME.tar"
+    tar xvf "$PKG_FILENAME.tar"
 
     # Change directory into source code
     cd $PKG_FILENAME

@@ -50,42 +50,82 @@ and it will be usable as a simplified autobuilder (similar to ArchLinux's AUR PK
 ### Usage
 - Simplified Usage
     - Assuming the following:
+        * Repository Site : github
         * Distribution : Debian
         * Package Manager : apt
     - via Curl
         - Viewing the target script
             ```console
-            curl -sSL https://raw.githubusercontent.com/Thanatisia/build-scripts/[branch-name]/packages/[author-name]/[application-name]/[version-number]/[package-manager]/compile.sh
+            curl -sSL https://raw.githubusercontent.com/Thanatisia/build-scripts/[branch-name]/packages/github/[author-name]/[application-name]/[package-manager]/compile.sh
             ```
         - Executing the target script without downloading
             + Please do this only if you have already read the script.
             ```console
-            curl -sSL https://raw.githubusercontent.com/Thanatisia/build-scripts/[branch-name]/packages/[author-name]/[application-name]/[version-number]/[package-manager]/compile.sh | bash
+            curl -sSL https://raw.githubusercontent.com/Thanatisia/build-scripts/[branch-name]/packages/github/[author-name]/[application-name]/[package-manager]/compile.sh | bash
             ```
         - Downloading the target script
             ```console
-            curl -O -L https://raw.githubusercontent.com/Thanatisia/build-scripts/[branch-name]/packages/[author-name]/[application-name]/[version-number]/[package-manager]/compile.sh
+            curl -O -L https://raw.githubusercontent.com/Thanatisia/build-scripts/[branch-name]/packages/github/[author-name]/[application-name]/[package-manager]/compile.sh
             ```
 
 ## Wiki
+### Source Code Repositories
+```
+Source code/git remote repositories are File/FTP Servers that holds the source code for their respective organizations and/or, including Distributed Version Control platforms such as GitHub, GitLab, Bitbucket etc.
+
+Packages located under 'others' will generally be placed in multi-versions, thus, those folders should contain an additional ["version-number"] folder in the package manager folder as shown in the repository structure.
+```
+- Distributed Version Control Platforms
+    + GitHub
+    + GitLab
+    + BitBucket
+- Others
+    + linux : git kernel.org
+
 ### Repository Structure
 ```
             root/
             |
             |-- packages/
                 |
-                |-- [author-name]/
+                |-- github/ : For GitHub-repositories
                     |
-                    |-- [application-name]/
+                    |-- [author-name]/
                         |
-                        |-- [version-number]/
+                        |-- [application-name]/
                             |
                             |-- apt/ : For apt-based (i.e. Debian) dependencies
                             |-- pacman/ : For pacman-based (i.e. ArchLinux) dependencies
+                |
+                |-- others/ : For other Remote repositories for individual hosts (i.e. linux kernel has the git.kernel.org)
+                    |
+                    |-- [author-name]/
+                        |
+                        |-- [application-name]/
+                            |
+                            |-- apt/ : For apt-based (i.e. Debian) dependencies
+                                |
+                                |-- (OPTIONAL) [version-number]/
+                            |
+                            |-- pacman/ : For pacman-based (i.e. ArchLinux) dependencies
+                                |
+                                |-- (OPTIONAL) [version-number]/
 ```
 
 ### TODO List/Pipeline
 > The following are plans/possible ideas
 + [ ] Migrating into a standalone author organization and repository for this project
++ [ ] Finalizing a standardized filesystem structure for the codebase that is efficient for the user
 
+## Notes
+- Please do [Contact Me](#contacts) if you would like to
+ * Talk about Tech
+ * Talk about the repository
+ * Project Ideas
+ * Bugs
+ * Issues
+ * Contributions
+
+## Contacts
+[![Twitter](https://img.shields.io/badge/Twitter-blue?logo=Twitter&logoColor=white)](https://twitter.com/phantasu)
 

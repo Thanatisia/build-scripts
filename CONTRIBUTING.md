@@ -32,4 +32,8 @@ Please follow these steps when contributing to the repository.
         + install() : To install the source code using their provided makefile/build script.
         + clean()/cleanup() : For cleaning up the source code folder and removing temporary files generated from the compilation
 
-
+## Filesystem Structure
+- Please place the files into the appropriate folders
+    - Version Number
+        + Packages located under any of the distributed version control platforms [GitHub, GitLab, BitBucket, etc] typically have the source code for the latest version up, thus, they do not necessarily need to contain an addition ["version-number"] folder in the package manager
+        + Packages located under 'others' will generally be placed in multi-versions, thus, those folders should contain an additional ["version-number"] folder in the package manager folder as shown in the repository structure.
