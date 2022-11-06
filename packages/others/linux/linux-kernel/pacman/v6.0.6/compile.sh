@@ -4,8 +4,8 @@ Manually Compiling the Linux Kernel from source code
 
 Method: Compile from Scratch to ensure that it is on the latest version
 
-Target Base System: Debian
-Target Package Manager: apt
+Target Base System: ArchLinux
+Target Package Manager: pacman
 "
 
 # Build Info
