@@ -14,8 +14,8 @@ CFLAGS="-j 4" # Use 4 cores/threads
 DEPENDENCIES=(git wget base-devel ncurses xz bc bison flex openssl libelf)
 
 # Package Information
-PKG_AUTHOR="linux"
-PKG_NAME="kernel"
+PKG_AUTHOR="torvalds"
+PKG_NAME="linux"
 SRC_URL="https://github.com/$PKG_AUTHOR/$PKG_NAME"
 
 # Functions
@@ -43,7 +43,7 @@ setup()
     git clone --depth 1 "$SRC_URL
 
     # Change directory into source code
-    cd $PKG_NAME
+    cd $PKG_NAME"
 }
 
 configure()
