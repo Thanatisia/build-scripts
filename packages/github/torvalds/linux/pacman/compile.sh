@@ -40,10 +40,10 @@ setup()
     pacman -S "${DEPENDENCIES[@]}"
 
     # Clone git repository
-    git clone --depth 1 "$SRC_URL
+    git clone --depth 1 "$SRC_URL"
 
     # Change directory into source code
-    cd $PKG_NAME"
+    cd $PKG_NAME
 }
 
 configure()
