@@ -38,3 +38,6 @@
     - Distributed Remote Repository Sites: [GitHub, BitBucket]
     - Organization Self-Hosted Source Code Hosts: [linux etc]
 
+### Update 2022-12-14 2332H | v0.4.1
+- Added build scripts for packages 'tmux' and 'jdtls' from github
+

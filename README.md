@@ -34,6 +34,14 @@ and it will be usable as a simplified autobuilder (similar to ArchLinux's AUR PK
                 + compile()/build() : For running the manual compilation/installation process
                 + install() : To install the source code using their provided makefile/build script.
                 + clean()/cleanup() : For cleaning up the source code folder and removing temporary files generated from the compilation
+    - Current WIP
+        1. You may have noticed that in certain build folders, there exists 2 files - 'compile.py' and a Makefile.
+            - compile.py is a prototype of my current Work-in-Progress universal build script format idea that i'm trying to make. 
+            - The goal is to make a template build script that is able to also allow you to write build scripts, unlike the current usage of shellscript which limits things to just Linux (shell).
+            - The Makefile coexists with the compile.py script, essentially a wrapper that automates and makes the usage of compile.py easier.
+            - The plan is to test this and if it works and is a positive concept
+                + I will then proceed with Phase 2: Porting
+                + I will port the compile.py script to either Rust or golang (still deciding, do give me your input)
 
 ## Setup
 ### Pre-Requisites
@@ -116,6 +124,7 @@ Packages located under 'others' will generally be placed in multi-versions, thus
 > The following are plans/possible ideas
 + [ ] Migrating into a standalone author organization and repository for this project
 + [ ] Finalizing a standardized filesystem structure for the codebase that is efficient for the user
++ [ ] Port compile.py from prototyping in python to either Rust or golang, whichever is more efficient for portable shellscript
 
 ## Notes
 - Please do [Contact Me](#contacts) if you would like to

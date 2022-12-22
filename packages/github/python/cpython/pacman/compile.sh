@@ -11,33 +11,21 @@ Target Package Manager: apt
 # Build Info
 CC="make"
 CFLAGS="-j 4" # Use 4 cores/threads
-DEPENDENCIES=(git wget build-essential ncurses-dev xz-utils bc libncurses-dev bison flex libssl-dev libelf-dev)
+DEPENDENCIES=(git wget base-devel pkg-config)
 
 # Package Information
-PKG_AUTHOR="torvalds"
-PKG_NAME="linux"
+PKG_AUTHOR="python"
+PKG_NAME="cpython"
 SRC_URL="https://github.com/$PKG_AUTHOR/$PKG_NAME"
 
 # Functions
-backup()
-{
-    : "
-    Backup all important files
-    "
-    echo -e "[+] Backing up Kernel Boot config files..."
-    cp -v /boot/config-$(uname -r) .config
-}
-
 setup()
 {
     : "
     Setup all dependencies required to build
     "
-    # Backup important files
-    backup
-
     # Install dependencies
-    apt install "${DEPENDENCIES[@]}"
+    pacman -S "${DEPENDENCIES[@]}"
 
     # Clone git repository
     git clone --depth 1 "$SRC_URL"
@@ -54,7 +42,7 @@ configure()
     "
 
     # TUI (Terminal User Interface) color menus, radiolists, dialogs. Useful for remote server (SSH) kernel compilations.
-    ${CC} menuconfig
+    ./configure
 
     # X-windows (Qt) based configuration tool, works best under KDE Desktop
     # ${CC} xconfig
@@ -70,18 +58,8 @@ build()
     Compile and Build/make the linux kernel
     "
     ${CC} ${CFLAGS} && \
-        echo -e "[+] Kernel Compilation Successful." || \
-        echo -e "[-] Kernel Compilation Error."
-}
-
-install_kernel_modules()
-{
-    : "
-    Install the Linux Kernel Modules
-    "
-    ${CC} ${CFLAGS} modules_install && \
-        echo -e "[+] Modules Installation Successful." || \
-        echo -e "[-] Modules Installation Error."
+        echo -e "[+] Compilation Successful." || \
+        echo -e "[-] Compilation Error."
 }
 
 install()
@@ -90,8 +68,9 @@ install()
     Install the Linux Kernel
     "
     ${CC} install && \
-        echo -e "[+] Kernel Installation Successful." || \
-        echo -e "[-] Kernel Installation Error."
+    # ${CC} altinstall && \
+        echo -e "[+] Installation Successful." || \
+        echo -e "[-] Installation Error."
 }
 
 clean()
@@ -106,39 +85,27 @@ clean()
 
 main()
 {
-    echo -e "[+] Configure your kernel"    
+    echo -e "[+] Configure"    
     configure
     res="$?"
     if [[ "$res" == "1" ]]; then
 	# Error
-	echo -e "Error with configuring kernel"
+	echo -e "Error with configuring"
 	exit
     fi
     read -p '[O] Configuration completed.' tmp
 
     echo -e ""
 
-    echo -e "[+] Starting Kernel Compilation"
+    echo -e "[+] Starting Compilation"
     build
     res="$?"
     if [[ "$res" == "1" ]]; then
 	# Error
-	echo -e "Error with compiling kernel"
+	echo -e "Error with compilation"
 	exit
     fi
     read -p '[O] Compilation completed.' tmp
-
-    echo -e ""
-
-    echo -e "Starting installation..."
-    install_kernel_modules
-    res="$?"
-    if [[ "$res" == "1" ]]; then
-	# Error
-	echo -e "Error with installing kernel modules"
-	exit
-    fi
-    read -p "Paused" tmp
 
     echo -e ""
 
@@ -146,7 +113,7 @@ main()
     res="$?"
     if [[ "$res" == "1" ]]; then
 	# Error
-	echo -e "Error with installing kernel to boot partition"
+	echo -e "Error with installing binaries"
 	exit
     fi
 
@@ -157,7 +124,7 @@ main()
     res="$?"
     if [[ "$res" == "1" ]]; then
 	# Error
-	echo -e "Error with installing kernel modules"
+	echo -e 'Error with cleaning up'
 	exit
     fi
     "

@@ -8,6 +8,15 @@ for contributors, please specify your project/package names here if it is not ye
 
 ## Projects
 ### GitHub Distributed Repository Packages
+- CPython by Python (Official Python repository)
+    + Method: Manual Compilation
+    - Package Managers
+        + apt
+        + pacman (WIP)
+- Jdtls by Eclipse
+    + Method: Manual Compilation via Maven
+    - Package Managers
+        + Pacman
 - Linux Kernel by Linus Torvalds
     + Method: Manual Compilation
     - Package Managers
@@ -22,12 +31,15 @@ for contributors, please specify your project/package names here if it is not ye
     + Method: Installation from external repository source
     - Package Managers
         + apt
-- Shellinabox by Shellinabox]
+- Shellinabox by Shellinabox
     + Method: Manual Compilation
     - Package Managers
         + apt
         + pacman
-
+- Tmux by tmux
+    + Method: Manual Compilation
+    - Package Managers
+        + pacman
 
 ### Self-Hosted/Personal Repository Servers
 - File Browser
