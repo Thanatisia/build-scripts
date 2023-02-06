@@ -1,26 +1,21 @@
 #!/bin/env bash
 : "
-Eclipse JDTLS Install
+bspwm manual installation
 
 Method: Compile from Scratch to ensure that it is on the latest version
 
 Target Base System: ArchLinux 
 Target Package Manager: pacman
-Reference Link: https://github.com/eclipse/eclipse.jdt.ls#installation
 "
 
 # Build Info
-CC="./mvnw"
-CFLAGS="-DskipTests=true clean verify"
-DEPENDENCIES=(git ninja gettext libtool autoconf automake cmake base-devel pkg-config unzip curl ncurses jdk-openjdk)
-
-# Additional Compile/Build Information
-JAVA_VERSION="19"
-JAVA_HOME="/usr/lib/jvm/java-$JAVA_VERSION-openjdk"
+CC="make"
+CFLAGS="CMAKE_BUILD_TYPE=RelWithDebInfo"
+DEPENDENCIES=(git libxinerama xcb-util libxcb xcb-util-wm xcb-util-keysyms)
 
 # Package Information
-PKG_AUTHOR="eclipse"
-PKG_NAME="eclipse.jdt.ls"
+PKG_AUTHOR="baskerville"
+PKG_NAME="bspwm"
 SRC_URL="https://github.com/$PKG_AUTHOR/$PKG_NAME"
 
 # Functions
@@ -73,7 +68,7 @@ clean()
 main()
 {
     build
-    # install
+    install
     # clean
 }
 
