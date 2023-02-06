@@ -11,11 +11,12 @@ Target Package Manager: pacman
 # Build Info
 CC="make"
 CFLAGS="CMAKE_BUILD_TYPE=RelWithDebInfo"
-DEPENDENCIES=(ninja gettext libtool autoconf automake cmake base-devel pkg-config unzip curl doxygen)
+DEPENDENCIES=(git ninja gettext libtool autoconf automake cmake base-devel pkg-config unzip curl doxygen)
 
 # Package Information
 PKG_AUTHOR="neovim"
 PKG_NAME="neovim"
+BIN_NAME="nvim" # Binary Name
 SRC_URL="https://github.com/$PKG_AUTHOR/$PKG_NAME"
 
 # Functions

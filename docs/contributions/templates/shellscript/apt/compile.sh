@@ -16,6 +16,7 @@ DEPENDENCIES=(place your dependencies here)
 # Package Information
 PKG_AUTHOR="AUTHOR_NAME_HERE"
 PKG_NAME="REPOSITORY_NAME_HERE"
+BIN_NAME="PACKAGE BINARY HERE" # Binary Name
 SRC_URL="https://github.com/$PKG_AUTHOR/$PKG_NAME"
 
 # Functions
