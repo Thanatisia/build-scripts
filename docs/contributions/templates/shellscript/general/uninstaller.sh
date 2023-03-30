@@ -1,23 +1,10 @@
 #!/bin/env bash
 : "
 Manual Built from Source Package Uninstaller
-
 Uninstall manually compiled from source packages installed to host system
-
-Target Base System: NIL
-Target Package Manager: NIL
+Target Base System: Debian 
+Target Package Manager: apt
 "
-
-# Build Info
-CC="make"
-CFLAGS="CMAKE_BUILD_TYPE=RelWithDebInfo"
-DEPENDENCIES=(git ninja gettext libtool autoconf automake cmake base-devel)
-
-# Package Information
-PKG_AUTHOR="[repo-author-name]"
-PKG_NAME="[repo-package-name]"
-BIN_NAME="[package-binary]" # Binary Name
-SRC_URL="https://github.com/$PKG_AUTHOR/$PKG_NAME"
 
 # Functions
 setup()
@@ -25,15 +12,19 @@ setup()
     : "
     Setup all dependencies required to build
     "
+    # Source settings file
+    source $PWD/settings.sh
 
     # Check if package is installed
-    pkg_locations="$(which $BIN_NAME)"
-    if [[ "$?" -gt 0 ]]; then
-        # = 0 = OK
-        # > 0 = Error
-        echo -e "Package $BIN_NAME is not installed."
-        exit 1
-    fi
+    for binary in "${BIN_NAMES[@]}"; do
+        pkg_locations="$(which $binary)"
+        if [[ "$?" -gt 0 ]]; then
+            # = 0 = OK
+            # > 0 = Error
+            echo -e "Package $binary is not installed."
+            exit 1
+        fi
+    done
 }
 
 uninstall_pkg()
@@ -41,9 +32,12 @@ uninstall_pkg()
     : "
     Uninstall the manually built from source package from host system
     "
-    rm -f $(which $BIN_NAME) && \
-        echo -e "[+] Uninstallation of $PKG_NAME Successful." || \
-        echo -e "[-] Uninstallation of $PKG_NAME Error."
+    # Check if package is installed
+    for binary in "${BIN_NAMES[@]}"; do
+        rm -f $(which $binary) && \
+            echo -e "[+] Uninstallation of $binary Successful." || \
+            echo -e "[-] Uninstallation of $binary Error."
+    done
 }
 
 main()
@@ -55,3 +49,4 @@ if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
     setup
     main "$@"
 fi
+

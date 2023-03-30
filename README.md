@@ -55,8 +55,8 @@ and it will be usable as a simplified autobuilder (similar to ArchLinux's AUR PK
     - Pacman Package Manager => install "base-devel" package
 
 ## Documentation
-### Usage
-- Simplified Usage
+### Obtaining
+- Individually
     - Assuming the following:
         * Repository Site : github
         * Distribution : Debian
@@ -73,10 +73,26 @@ and it will be usable as a simplified autobuilder (similar to ArchLinux's AUR PK
             ```
         - Downloading the target script
             ```console
-            curl -O -L https://raw.githubusercontent.com/Thanatisia/build-scripts/[branch-name]/packages/github/[author-name]/[application-name]/[package-manager]/compile.sh
+            curl -O -L https://raw.githubusercontent.com/Thanatisia/build-scripts/[branch-name]/packages/github/[author-name]/[application-name]/[package-manager]/[script-name]
             ```
+- Download all scripts using the `dl_template.sh` automate script
+    - Obtain script
+        ```console
+        curl -O -L https://raw.githubusercontent.com/Thanatisia/build-scripts/[branch-name]/packages/github/[author-name]/[application-name]/[package-manager]/dl_template.sh
+        ```
+    - Change permission of script
+        ```console
+        chmod u+x dl_template.sh
+        ```
+    - Execute script to download all the files
+        ```console
+        ./dl_template.sh
+        ```
 
 ## Wiki
+### Source Files, Templates
++ Please refer to [CONTRIBUTING](CONTRIBUTING.md) for documentation on all of the scripts, variables etc
+
 ### Source Code Repositories
 ```
 Source code/git remote repositories are File/FTP Servers that holds the source code for their respective organizations and/or, including Distributed Version Control platforms such as GitHub, GitLab, Bitbucket etc.

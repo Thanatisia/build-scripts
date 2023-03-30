@@ -1,11 +1,7 @@
 #!/bin/env bash
 : "
-Manually Compiling from source code
-
-Method: Compile from Scratch to ensure that it is on the latest version
-
-Target Base System: Debian
-Target Package Manager: apt
+Manual Built from Source Package Installer
+Install manually compiled from source packages to host system
 "
 
 # Functions
@@ -31,18 +27,22 @@ setup()
     fi
 }
 
-build()
+begin_install()
 {
     : "
-    Compile and Build/make the package
+    Install the binary
     "
-    # make ${CFLAGS}
-    ./install && \
-        echo -e "[+] binaries have been downloaded." || \
-        echo -e "[-] binaries download error."
+    if [[ "$pkg_exists" == "1" ]]; then
+        # If target folder exists
+        # Copy to system files
+        sudo cp bin/* /usr/bin/ && \
+            echo -e "[+] Installation Successful." || \
+            echo -e "[-] Installation Error."
+    fi
 }
+
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
     setup
-    build
+    begin_install
 fi

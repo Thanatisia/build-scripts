@@ -1,11 +1,6 @@
 #!/bin/env bash
 : "
-Manually Compiling from source code
-
-Method: Compile from Scratch to ensure that it is on the latest version
-
-Target Base System: Debian
-Target Package Manager: apt
+Cleanup all temporary files created from the compilation/build process
 "
 
 # Functions
@@ -31,18 +26,16 @@ setup()
     fi
 }
 
-build()
+clean()
 {
     : "
-    Compile and Build/make the package
+    Cleanup and remove temporary files generated during compilation
     "
-    # make ${CFLAGS}
-    ./install && \
-        echo -e "[+] binaries have been downloaded." || \
-        echo -e "[-] binaries download error."
+    ${CC} clean && \
+        echo -e "[+] Cleanup Successful." || \
+        echo -e "[-] Cleanup Error."
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
-    setup
-    build
-fi
+    clean
+fi 

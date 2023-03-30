@@ -48,51 +48,154 @@ Please follow these steps when contributing to the repository.
 ### Components
 > Generally, every template type should contain the following components
 - Variables
-    + CC : The global Cross Compiler. stemming from Makefile (make), this variable will contain the compiler/builder/runner/interpretor used to generate the program binary and/or script.
-    + CFLAGS : (OPTIONAL) The global Compiler flags. stemming from Makefile (make), this variable will contain the flags to parse with the Cross Compiler. This is optional and can be left empty if the build script creator wishes to set individual compiler flags in the functions seperately.
+    - Build Information
+        - CC           : The global Cross Compiler. stemming from Makefile (make), this variable will contain the compiler/builder/runner/interpretor used to generate the program binary and/or script.
+            + Type: String
+        - CFLAGS       : (OPTIONAL) The global Compiler flags. stemming from Makefile (make), this variable will contain the flags to parse with the Cross Compiler. This is optional and can be left empty if the build script creator wishes to set individual compiler flags in the functions seperately.
+            + Type: String
+        - DEPENDENCIES : Specify all dependencies and required packages to build/install; used generally in the function `install_dependencies`
+            + Type: List
+    - Package Information
+        - PKG_AUTHOR   : Specify the package/project author
+            + Type: String
+        - PKG_NAME     : Specify the package/project name
+            + Type: String
+        - SRC_URL      : Specify the URL of the project's repository
+            + Type: String; Use List if you require various repository sources (WIP to make implementations accept List)
+        - BIN_NAMES    : Specify the names of the binaries that the project provides
+            + Type: List
 - Functions
-    + setup : The setup function, used for installing/building pre-requisites, definitions etc before the primary build/make process
-    + build : The primary build/make/compilation process. This is where the general compilation is done after configurations are made.
-    + install : The overall installation process of the built/compiled program into the system path and/or other dependencies and folders
-    + clean : (Optional) This is the cleanup process/function done only after installation is completed. This can vary from 'make clean' to individual removal. This is up to the recommendation of the project repository maintainer and/or the build script creator if the maintainer did not specify.
-    + main : This is the main launcher runner function that will execute each of the above sections to compile/build the program
+    + source_files         : Source all settings files you would like to use
+    + install_dependencies : Install all dependencies, create files/folders required for the script
+    + obtain_repository    : Obtain the source code; i.e. clone git repository
+    + setup         : The setup function, used for installing/building pre-requisites, definitions etc before the primary build/make process
+    + build         : The primary build/make/compilation process. This is where the general compilation is done after configurations are made.
+    + begin_install : The overall installation process of the built/compiled program into the system path and/or other dependencies and folders
+    + uninstall_pkg : Contains the uninstallation steps either to reverse the installation process in `begin_install`; or as specified by the maintainer
+    + clean         : (Optional) This is the cleanup process/function done only after installation is completed. This can vary from 'make clean' to individual removal. This is up to the recommendation of the project repository maintainer and/or the build script creator if the maintainer did not specify.
+    + main          : This is the main launcher runner function that will execute each of the above sections to compile/build the program
+- Script files
+    1. settings.sh    : Contains all settings, variables to be imported into the parts
+    2. setup.sh       : To contain setup processes such as creating workspace/project folder structure, installing dependencies
+    3. compile.sh     : To contain compilation/make/build processes and functions for manual building of source codes
+    4. installer.sh   : Self-explanatory, this is the installer script to get all manuals, docs, source code, source files into the system applications level (i.e /usr/bin, /usr/sbin)
+    5. cleanup.sh     : To contain cleanup processes after the compilation/build/make functions (i.e. make clean)
+    6. start.sh       : This is the primary main start script, this script will take the scripts you specified to run, and run them as required
+    7. uninstaller.sh : To contain uninstallation processes such as removal of the installed files installed either by the script, or steps provided by the maintainer.
 
 ### GitHub
-```console
-setup()
-{
+- settings.sh
+    ```console
+    # Build Info
+    CC="your-cross-compiler-or-builder"
+    CFLAGS="your-compiler-flags"
+    DEPENDENCIES=(package-names)
 
-}
+    # Package Information
+    PKG_AUTHOR="author-name"
+    PKG_NAME="project-name"
+    SRC_URL="repository-source-url"
+    BIN_NAMES=(binary-names)
+    ```
 
-build()
-{
+- setup.sh
+    ```console
+    source_files()
+    {
 
-}
+    }
 
-install()
-{
+    install_dependencies()
+    {
 
-}
+    }
 
-clean()
-{
+    obtain_repository()
+    {
 
-}
+    }
 
-main()
-{
-    argv=("$@")
-    argc="${#argv[@]}"
-}
+    setup()
+    {
 
-if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
-    main "$@"
-fi
-```
+    }
+
+    if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+        setup
+    fi
+    ```
+
+- compile.sh
+    ```console
+    setup()
+    {
+
+    }
+
+    build()
+    {
+
+    }
+
+    if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+        setup
+        build
+    fi
+    ```
+
+- installer.sh
+    ```console
+    setup()
+    {
+
+    }
+
+    begin_install()
+    {
+
+    }
+
+    if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+        setup
+        begin_install
+    fi
+    ```
+
+- cleanup.sh
+    ```console
+    setup()
+    {
+
+    }
+
+    clean()
+    {
+
+    }
+
+    if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+        clean
+    fi
+    ```
+
+- start.sh
+    ```console
+    # Current script variable
+    SCRIPTS=() # List all scripts you wish to execute
+
+    main()
+    {
+`
+    }
+
+    if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+        main "$@"
+    fi
+    ```
 
 ### Others
-```console
-
+```
+WIP
 ```
 
 ## Wiki

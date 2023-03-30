@@ -1,21 +1,12 @@
 #!/bin/env bash
 : "
-Manual Build from Source script
+Manually Compiling from source code
 
-Target Base System: NIL
-Target Package Manager: NIL
+Method: Compile from Scratch to ensure that it is on the latest version
+
+Target Base System: Debian
+Target Package Manager: apt
 "
-
-# Build Info
-CC="make"
-CFLAGS="CMAKE_BUILD_TYPE=RelWithDebInfo"
-DEPENDENCIES=(git ninja gettext libtool autoconf automake cmake base-devel)
-
-# Package Information
-PKG_AUTHOR="[repo-author-name]"
-PKG_NAME="[repo-package-name]"
-BIN_NAME="[package-binary]" # Binary Name
-SRC_URL="https://github.com/$PKG_AUTHOR/$PKG_NAME"
 
 # Functions
 setup()
@@ -23,55 +14,35 @@ setup()
     : "
     Setup all dependencies required to build
     "
+    # Source settings file
+    source $PWD/settings.sh
 
-    # Install dependencies
-    # [your-package-installer-here] "${DEPENDENCIES[@]}"
+    # Check if target files/folders exists
+    pkg_exists=0
+    if [[ -d "$PKG_NAME" ]]; then
+        # Package folder exists
+        pkg_exists=1
 
-    # Clone repository
-    git clone "$SRC_URL"
-
-    # Change directory into repository
-    cd $PKG_NAME
+        # Change directory into source code
+        cd $PKG_NAME
+    else
+        echo -e "Package repository directory does not exists."
+        exit
+    fi
 }
 
 build()
 {
     : "
-    Compile and Build/make the source code into an executable 
+    Compile and Build/make the package
     "
-    ${CC} ${CFLAGS} && \
-        echo -e "[+] Compilation Successful." || \
-        echo -e "[-] Compilation Error."
-}
-
-install()
-{
-    : "
-    Install and move the compiled binary to the host system
-    "
-    ${CC} install && \
-        echo -e "[+] Installation Successful." || \
-        echo -e "[-] Installation Error."
-}
-
-clean()
-{
-    : "
-    Cleanup and remove temporary files generated during compilation
-    "
-    ${CC} clean && \
-        echo -e "[+] Cleanup Successful." || \
-        echo -e "[-] Cleanup Error."
-}
-
-main()
-{
-    build
-    install
-    # clean
+    # make ${CFLAGS}
+    ./install && \
+        echo -e "[+] binaries have been downloaded." || \
+        echo -e "[-] binaries download error."
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
     setup
-    main "$@"
+    build
 fi
