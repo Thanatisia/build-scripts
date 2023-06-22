@@ -8,6 +8,12 @@ for contributors, please specify your project/package names here if it is not ye
 
 ## Projects
 ### GitHub Distributed Repository Packages
+- arch-install-scripts by ArchLinux
+    + Method: Manual Compilation
+    - Package Managers
+        + apt
+        + pacman
+        + xbps
 - CPython by Python (Official Python repository)
     + Method: Manual Compilation
     - Package Managers
