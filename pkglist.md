@@ -46,6 +46,11 @@ for contributors, please specify your project/package names here if it is not ye
     + Method: Manual Compilation
     - Package Managers
         + pacman
+- xbps by Void Linux
+    + Method: Manual Compilation
+    - Package Managers
+        + apt
+        + pacman
 
 ### Self-Hosted/Personal Repository Servers
 - File Browser
