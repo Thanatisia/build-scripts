@@ -8,6 +8,12 @@ for contributors, please specify your project/package names here if it is not ye
 
 ## Projects
 ### GitHub Distributed Repository Packages
+- arch-install-scripts by ArchLinux
+    + Method: Manual Compilation
+    - Package Managers
+        + apt
+        + pacman
+        + xbps
 - CPython by Python (Official Python repository)
     + Method: Manual Compilation
     - Package Managers
@@ -39,6 +45,11 @@ for contributors, please specify your project/package names here if it is not ye
 - Tmux by tmux
     + Method: Manual Compilation
     - Package Managers
+        + pacman
+- xbps by Void Linux
+    + Method: Manual Compilation
+    - Package Managers
+        + apt
         + pacman
 
 ### Self-Hosted/Personal Repository Servers

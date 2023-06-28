@@ -6,7 +6,7 @@ Download the template source files required for the repository
 # Project Variables
 TARGET_PACKAGE_AUTHOR="project-author-name" # Your target project's author
 TARGET_PACKAGE_NAME="project-name" # Your target project name
-PKG_MGR="apt|pacman" # Your package manager
+PKG_MGR="apt|pacman|xbps" # Your package manager
 SOURCE_FILES=("settings.sh" "setup.sh" "compile.sh" "installer.sh" "cleanup.sh" "start.sh" "uninstaller.sh")
 TARGET_PACKAGE_SRC_BASE_URL="https://raw.githubusercontent.com/Thanatisia/build-scripts/main/packages/github/$TARGET_PACKAGE_AUTHOR/$TARGET_PACKAGE_SRC_URL/$PKG_MGR/"
 
