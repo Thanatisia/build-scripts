@@ -77,8 +77,17 @@ and it will be usable as a simplified autobuilder (similar to ArchLinux's AUR PK
             ```
 - Download all scripts using the `dl_template.sh` automate script
     - Obtain script
+        - Specific project
+            ```console
+            curl -O -L https://raw.githubusercontent.com/Thanatisia/build-scripts/[branch-name]/packages/github/[author-name]/[application-name]/[package-manager]/dl_template.sh
+            ```
+        - Template and manually edit
+            ```console
+            curl -O -L https://raw.githubusercontent.com/Thanatisia/build-scripts/[branch-name]/docs/contributions/templates/shellscript/dl_template.sh
+            ```
+    - Edit the script according to what project you need
         ```console
-        curl -O -L https://raw.githubusercontent.com/Thanatisia/build-scripts/[branch-name]/packages/github/[author-name]/[application-name]/[package-manager]/dl_template.sh
+        $EDITOR dl_template.sh
         ```
     - Change permission of script
         ```console
@@ -141,6 +150,7 @@ Packages located under 'others' will generally be placed in multi-versions, thus
 + [ ] Migrating into a standalone author organization and repository for this project
 + [ ] Finalizing a standardized filesystem structure for the codebase that is efficient for the user
 + [ ] Port compile.py from prototyping in python to either Rust or golang, whichever is more efficient for portable shellscript
++ [ ] Create a better "package manager"/download script to improve the UX of the repository/project
 
 ## Notes
 - Please do [Contact Me](#contacts) if you would like to

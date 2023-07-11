@@ -41,3 +41,15 @@
 ### Update 2022-12-14 2332H | v0.4.1
 - Added build scripts for packages 'tmux' and 'jdtls' from github
 
+### Update 2023-07-07 2203H | added-new-projects
+```
+[New]
+- Added new projects
+    + davatorium/rofi
+    + novnc/websockify
+- Added 'dl_template.sh' to 'billw2/rpi-clone' to test its effectiveness when provided to individual projects as a standalone "Automated CLI script"
+
+[Updates]
+- Updated package list with new packages and new layout
+- Updated README with new QoL improvements (WIP), tasks and usage examples
+```

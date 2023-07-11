@@ -8,53 +8,55 @@ for contributors, please specify your project/package names here if it is not ye
 
 ## Projects
 ### GitHub Distributed Repository Packages
-- arch-install-scripts by ArchLinux
-    + Method: Manual Compilation
-    - Package Managers
-        + apt
-        + pacman
-        + xbps
-- CPython by Python (Official Python repository)
-    + Method: Manual Compilation
-    - Package Managers
-        + apt
-        + pacman (WIP)
-- Jdtls by Eclipse
-    + Method: Manual Compilation via Maven
-    - Package Managers
-        + Pacman
-- Linux Kernel by Linus Torvalds
-    + Method: Manual Compilation
-    - Package Managers
-        + apt
-        + pacman
-- Neovim by Neovim
-    + Method: Manual Compilation
-    - Package Managers
-        + apt
-        + pacman
-- Pimox by Pimox
-    + Method: Installation from external repository source
-    - Package Managers
-        + apt
-- Shellinabox by Shellinabox
-    + Method: Manual Compilation
-    - Package Managers
-        + apt
-        + pacman
-- Tmux by tmux
-    + Method: Manual Compilation
-    - Package Managers
-        + pacman
-- xbps by Void Linux
-    + Method: Manual Compilation
-    - Package Managers
-        + apt
-        + pacman
+- archlinux
+    - arch-install-scripts
+        + Method: Manual Compilation
+        + Package Managers: apt, pacman, xbps
+- python
+    - cpython
+        + Method: Manual Compilation
+        + Package Managers: apt, pacman (WIP)
+- davatorium
+    - [rofi](packages/github/davatorium/rofi)
+        + Method: Manual Compilation via GNU Build System
+        + Package Managers: apt
+- eclipse
+    - jdtls
+        + Method: Manual Compilation via Maven
+        + Package Managers: pacman
+- torvalds
+    - linux
+        + Method: Manual Compilation
+        + Package Managers: apt, pacman
+- neovim
+    - neovim
+        + Method: Manual Compilation
+        + Package Managers: apt, pacman
+- novnc
+    - websockify
+        + Method: Python setup.py
+        + Package Managers: apt, pacman
+- pimox
+    - pimox
+        + Method: Installation from external repository source
+        + Package Managers: apt
+- shellinabox
+    - shellinabox
+        + Method: Manual Compilation
+        + Package Managers: apt, pacman
+- tmux
+    - tmux
+        + Method: Manual Compilation
+        + Package Managers: pacman
+- void-linux
+    - xbps
+        + Method: Manual Compilation
+        + Package Managers: apt, pacman
 
 ### Self-Hosted/Personal Repository Servers
 - File Browser
-     + Method: Installation from pre-made install script by the official maintainers
+    - filebrowser
+        + Method: Installation from pre-made install script by the official maintainers
 - Linux
     - Linux Kernel
         + Manual Compilation
