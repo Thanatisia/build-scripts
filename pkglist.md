@@ -59,4 +59,8 @@ for contributors, please specify your project/package names here if it is not ye
         + Method: Installation from pre-made install script by the official maintainers
 - Linux
     - Linux Kernel
-        + Manual Compilation
+        + Method: Manual Compilation
+- suckless
+    - dmenu
+        + Method: Manual Compilation
+        + package Managers: general/agnostic
