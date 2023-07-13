@@ -32,6 +32,10 @@ for contributors, please specify your project/package names here if it is not ye
     - neovim
         + Method: Manual Compilation
         + Package Managers: apt, pacman
+- neutrinolabs
+    - xrdp
+        + Method: Manual Compilation
+        + Package Managers: pacman
 - novnc
     - websockify
         + Method: Python setup.py

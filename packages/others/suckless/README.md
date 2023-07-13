@@ -13,3 +13,9 @@ for example,
         - Edit 'config.def.h' to modify the configurations
             + 'config.def.h' will be compiled and built into 'config.h' which is then read into 'dmenu.c' and any other files that requires the configuration file
 ```
+
+## Packages
+```
+Suckless Packages
+```
++ dmenu : A simple and lightweight but dynamic menu for XOrg
