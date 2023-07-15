@@ -33,6 +33,9 @@ for contributors, please specify your project/package names here if it is not ye
         + Method: Manual Compilation
         + Package Managers: apt, pacman
 - neutrinolabs
+    - xorgxrdp
+        + Method: Manual Compilation
+        + Package Managers: pacman
     - xrdp
         + Method: Manual Compilation
         + Package Managers: pacman
