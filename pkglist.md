@@ -24,10 +24,10 @@ for contributors, please specify your project/package names here if it is not ye
     - jdtls
         + Method: Manual Compilation via Maven
         + Package Managers: pacman
-- torvalds
-    - linux
+- libvnc
+    - x11vnc
         + Method: Manual Compilation
-        + Package Managers: apt, pacman
+        + Package Managers: pacman
 - neovim
     - neovim
         + Method: Manual Compilation
@@ -55,6 +55,10 @@ for contributors, please specify your project/package names here if it is not ye
     - tmux
         + Method: Manual Compilation
         + Package Managers: pacman
+- torvalds
+    - linux
+        + Method: Manual Compilation
+        + Package Managers: apt, pacman
 - void-linux
     - xbps
         + Method: Manual Compilation
