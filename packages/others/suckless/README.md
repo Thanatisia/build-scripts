@@ -19,3 +19,4 @@ for example,
 Suckless Packages
 ```
 + dmenu : A simple and lightweight but dynamic menu for XOrg
++ slock : The Simple X display locker; A simple X screenlocker/lockscreen
