@@ -113,10 +113,19 @@ slock
 ## Wiki
 
 ## Customization and Configuration
+### Environment Variables
+- System
+    + EDITOR: Specify the target editor to use
+- Project/Repository
+    + REPO_DOMAIN="http://repository.domain" : Specify the domain of the project repository
+    + REPO_PROJECT="project-name" : Specify the name of the project's repository 
+    + REPO_URL=$REPO_DOMAIN/$REPO_PROJECT : Specify the URL of the project repository
+- Patching
+    + PATCH_FILE="path/to/patch/file.diff": Specify the target patch file's directory
 
 ## Resources
 
 ## References
-+ [ArchWiki - Dmenu](https://wiki.archlinux.org/title/dmenu#:~:text=dmenu%20is%20a%20fast%20and,line%20is%20printed%20to%20stdout.)
++ [Reddit - Suckess - How do I patch suckless software as a newbie](https://www.reddit.com/r/suckless/comments/spc9k2/how_do_i_patch_suckless_software_as_a_newbie/)
 
 ## Remarks
