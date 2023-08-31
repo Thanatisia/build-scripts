@@ -25,6 +25,11 @@ for contributors, please specify your project/package names here if it is not ye
     - jdtls
         + Method: Manual Compilation via Maven
         + Package Managers: pacman
+- git
+    - git : Version Control system
+        + Method: Manual Compilation
+        + Build System: make
+        + Package Managers: apt
 - libvnc
     - x11vnc
         + Method: Manual Compilation
