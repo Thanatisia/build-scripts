@@ -12,10 +12,11 @@ for contributors, please specify your project/package names here if it is not ye
     - arch-install-scripts
         + Method: Manual Compilation
         + Package Managers: apt, pacman, xbps
-- python
-    - cpython
+- aristocratos
+    - btop++
         + Method: Manual Compilation
-        + Package Managers: apt, pacman (WIP)
+        + Build System: make
+        + Package Managers: apt
 - davatorium
     - [rofi](packages/github/davatorium/rofi)
         + Method: Manual Compilation via GNU Build System
@@ -47,6 +48,10 @@ for contributors, please specify your project/package names here if it is not ye
     - pimox
         + Method: Installation from external repository source
         + Package Managers: apt
+- python
+    - cpython
+        + Method: Manual Compilation
+        + Package Managers: apt, pacman (WIP)
 - shellinabox
     - shellinabox
         + Method: Manual Compilation
@@ -64,6 +69,13 @@ for contributors, please specify your project/package names here if it is not ye
         + Method: Manual Compilation
         + Package Managers: apt, pacman
 
+### GitLab Distributed Repository Packages
+- qemu
+    - qemu-all : Qemu compiled for all machines
+        + Method: Manual Compilation
+        + Build System: ninja
+        + Package Managers: apt
+
 ### Self-Hosted/Personal Repository Servers
 - File Browser
     - filebrowser
@@ -74,4 +86,10 @@ for contributors, please specify your project/package names here if it is not ye
 - suckless
     - dmenu
         + Method: Manual Compilation
+        + Build System: make
         + package Managers: general/agnostic
+    - slock
+        + Method: Manual Compilation
+        + Build System: make
+        + package Managers: general/agnostic
+

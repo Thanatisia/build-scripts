@@ -125,6 +125,11 @@ Please follow these steps when contributing to the repository.
     fi
     ```
 
+- configure.sh
+    ```bash
+    
+    ```
+
 - compile.sh
     ```console
     setup()
