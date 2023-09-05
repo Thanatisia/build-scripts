@@ -85,6 +85,11 @@ for contributors, please specify your project/package names here if it is not ye
 - File Browser
     - filebrowser
         + Method: Installation from pre-made install script by the official maintainers
+- finalrewind
+    - feh: Lightweight X-11 Image Viewer
+        + Method: Manual Compilation
+        + Build System: make
+        + Package Managers: apt
 - Linux
     - Linux Kernel
         + Method: Manual Compilation
