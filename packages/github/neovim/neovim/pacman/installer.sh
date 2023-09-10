@@ -1,9 +1,7 @@
 #!/bin/env bash
 : "
-Manual Built from Source Package Uninstaller
-Uninstall manually compiled from source packages installed to host system
-Target Base System: ArchLinux
-Target Package Manager: pacman
+Manual Built from Source Package Installer
+Install manually compiled from source packages to host system
 "
 
 # Functions
@@ -29,21 +27,22 @@ setup()
     fi
 }
 
-uninstall_pkg()
+begin_install()
 {
     : "
-    Uninstall the manually built from source package from host system
+    Install the binary
     "
-    sudo ${CC} uninstall
+    if [[ "$pkg_exists" == "1" ]]; then
+        # If target folder exists
+        # Copy to system files
+        sudo ${CC} install && \
+            echo -e "[+] Installation Successful." || \
+            echo -e "[-] Installation Error."
+    fi
 }
 
-main()
-{
-    uninstall_pkg
-}
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
     setup
-    main "$@"
+    begin_install
 fi
-

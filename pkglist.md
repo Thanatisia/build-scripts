@@ -89,7 +89,7 @@ for contributors, please specify your project/package names here if it is not ye
     - feh: Lightweight X-11 Image Viewer
         + Method: Manual Compilation
         + Build System: make
-        + Package Managers: apt
+        + Package Managers: apt, pacman
 - Linux
     - Linux Kernel
         + Method: Manual Compilation
