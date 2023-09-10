@@ -1,9 +1,6 @@
 #!/bin/env bash
 : "
-Manual Built from Source Package Uninstaller
-Uninstall manually compiled from source packages installed to host system
-Target Base System: ArchLinux
-Target Package Manager: pacman
+Cleanup all temporary files created from the compilation/build process
 "
 
 # Functions
@@ -29,21 +26,16 @@ setup()
     fi
 }
 
-uninstall_pkg()
+clean()
 {
     : "
-    Uninstall the manually built from source package from host system
+    Cleanup and remove temporary files generated during compilation
     "
-    sudo ${CC} uninstall
-}
-
-main()
-{
-    uninstall_pkg
+    ${CC} clean && \
+        echo -e "[+] Cleanup Successful." || \
+        echo -e "[-] Cleanup Error."
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
-    setup
-    main "$@"
-fi
-
+    clean
+fi 
