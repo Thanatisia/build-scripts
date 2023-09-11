@@ -4,7 +4,7 @@
 REPO_AUTHOR="git"
 REPO_PROJECT="git"
 REPO_DOMAIN="https://github.com"
-DEPENDENCIES=(build-essential make gcc g++) # Set Dependencies
+DEPENDENCIES=(build-essential make gcc g++ asciidoc) # Set Dependencies
 EDITOR="vim" # Set Default Editor
 
 ## Derivatives
