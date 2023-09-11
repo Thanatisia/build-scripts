@@ -1,4 +1,4 @@
-# btop++
+# git
 
 ## Information
 ### Background
@@ -18,6 +18,8 @@ Version Control System created by Linus Torvalds that is widely used globally
 + make
 + gcc
 + g++
++ asciidoc : For writing ASCII documentations
++ libcurl4-openssl-dev : For curl
 
 ### Pre-Requisites
 
