@@ -45,6 +45,10 @@ for contributors, please specify your project/package names here if it is not ye
     - xrdp
         + Method: Manual Compilation
         + Package Managers: pacman
+- ninja-build
+    - ninja
+        + Method: Manual Compilation
+        + Package Managers: apt
 - novnc
     - websockify
         + Method: Python setup.py
