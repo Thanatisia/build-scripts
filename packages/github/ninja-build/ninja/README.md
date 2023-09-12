@@ -3,7 +3,6 @@
 ## Information
 ### Background
 ```
-Version Control System created by Linus Torvalds that is widely used globally
 Small build system with a focus on speed.
 ```
 
