@@ -20,7 +20,7 @@ install_dependencies()
     Install and setup dependencies
     "
     # Install dependencies
-    sudo apt install "${DEPENDENCIES[@]}"
+    sudo pacman -S "${DEPENDENCIES[@]}"
 }
 
 obtain_repository()
