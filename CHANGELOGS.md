@@ -4,6 +4,9 @@
     The following are changes made to the repository.
 ```
 
+## Table of Contents
++ [2023-12-03](#2023-12-03)
+
 ## Updates
 
 ### Update 2022-11-01 2111H | v0.1.0
@@ -53,3 +56,14 @@
 - Updated package list with new packages and new layout
 - Updated README with new QoL improvements (WIP), tasks and usage examples
 ```
+
+## 2023-12-03
+#### 2307H
+- New
+    - Added new build scripts for packages and to be tested
+        - Using apt
+            - archlinux/devtools
+            - pacman/pacman
+- Updates
+    - Updated package list with new packages
+
