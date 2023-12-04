@@ -6,6 +6,7 @@
 
 ## Table of Contents
 + [2023-12-03](#2023-12-03)
++ [2023-12-04](#2023-12-04)
 
 ## Updates
 
@@ -57,7 +58,7 @@
 - Updated README with new QoL improvements (WIP), tasks and usage examples
 ```
 
-## 2023-12-03
+### 2023-12-03
 #### 2307H
 - New
     - Added new build scripts for packages and to be tested
@@ -66,4 +67,10 @@
             - pacman/pacman
 - Updates
     - Updated package list with new packages
+
+### 2023-12-04
+#### 2258H
+- Updates
+    - Updated document 'README.md' in 'packages/gitlab/archlinux/devtools'
+        - Added step to Build or Compile all targets using Makefile
 

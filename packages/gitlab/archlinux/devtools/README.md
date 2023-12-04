@@ -66,6 +66,12 @@ Tools for ArchLinux package maintainers
         make
         ```
 
+- Build/Compile all
+    - Using Makefile
+        ```console
+        BUILDTOOLVER="${pkgver}-${pkgrel}-${arch}" make all
+        ```
+
 #### Installation
 - Install built binary and files to system
     - Using Makefile
