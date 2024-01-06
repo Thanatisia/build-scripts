@@ -17,6 +17,19 @@ for contributors, please specify your project/package names here if it is not ye
         + Method: Manual Compilation
         + Build System: make
         + Package Managers: apt
+- baskerville
+    - bspwm
+        + Method: Manual Compilation
+        + Build System: make
+        - Package Managers: 
+            + apt
+            + pacman
+    - sxhkd
+        + Method: Manual Compilation
+        + Build System: make
+        - Package Managers: 
+            + apt
+            + pacman
 - davatorium
     - [rofi](packages/github/davatorium/rofi)
         + Method: Manual Compilation via GNU Build System

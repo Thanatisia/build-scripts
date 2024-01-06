@@ -7,6 +7,7 @@
 ## Table of Contents
 + [2023-12-03](#2023-12-03)
 + [2023-12-04](#2023-12-04)
++ [2024-01-06](#2024-01-06)
 
 ## Updates
 
@@ -73,4 +74,14 @@
 - Updates
     - Updated document 'README.md' in 'packages/gitlab/archlinux/devtools'
         - Added step to Build or Compile all targets using Makefile
+
+### 2024-01-06
+#### 1342H
+- New
+    - Added new apt project build scripts for github project 'baskerville/bspwm'
+        - Temporarily using the pacman's single-file compile.sh system
+    - Added new apt project build scripts for github project 'baskerville/sxhkd'
+        - Temporarily using the pacman's single-file compile.sh system
+- Updates
+    - Updated package list with new packages
 
