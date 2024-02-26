@@ -8,6 +8,7 @@
 + [2023-12-03](#2023-12-03)
 + [2023-12-04](#2023-12-04)
 + [2024-01-06](#2024-01-06)
++ [2024-02-26](#2024-02-26)
 
 ## Updates
 
@@ -84,4 +85,10 @@
         - Temporarily using the pacman's single-file compile.sh system
 - Updates
     - Updated package list with new packages
+
+### 2024-02-26
+#### 2016H
+- New
+    + Added new build scripts for 'sqlite/sqlite' in 'packages/others' using Makefile recipes (to be tested)
+
 

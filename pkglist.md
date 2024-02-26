@@ -120,6 +120,11 @@ for contributors, please specify your project/package names here if it is not ye
 - Linux
     - Linux Kernel
         + Method: Manual Compilation
+- sqlite
+    - sqlite : Standalone File-based Relational Database Management System
+        + Method: Makefile recipe (Testing)
+        + Build System: make
+        + Package Managers: general/agnostic
 - suckless
     - dmenu
         + Method: Manual Compilation
