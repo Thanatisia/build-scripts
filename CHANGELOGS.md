@@ -9,6 +9,7 @@
 + [2023-12-04](#2023-12-04)
 + [2024-01-06](#2024-01-06)
 + [2024-02-26](#2024-02-26)
++ [2024-03-06](#2024-03-06)
 
 ## Updates
 
@@ -91,4 +92,12 @@
 - New
     + Added new build scripts for 'sqlite/sqlite' in 'packages/others' using Makefile recipes (to be tested)
 
+### 2024-03-06
+#### 1715H
+- Updates
+    - Updated Makefile 'unix.Makefile' in 'packages/others/sqlite/sqlite/general/'
+        + Fixed unit test and Configuration steps
+    - Updated Makefile 'windows.Makefile' in 'packages/others/sqlite/sqlite/general/'
+        + Added new dependenc(ies)
+        + Fixed unit test and Configuration steps
 

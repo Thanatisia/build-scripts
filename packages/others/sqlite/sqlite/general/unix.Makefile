@@ -37,7 +37,7 @@ help:
 
 setup-autoconf:
 	## Download SQLite3 autoconf C source code
-	@test -d ${SQLITE_AUTOCONF_TARBALL}-${SQLITE_SRC_VERSION} \
+	@test -f ${SQLITE_AUTOCONF_TARBALL}-${SQLITE_SRC_VERSION}.tar.gz \
 		|| wget https://www.sqlite.org/${SQLITE_SRC_YEAR}/${SQLITE_AUTOCONF_TARBALL}-${SQLITE_SRC_VERSION}.tar.gz \
 		&& tar -xvzf ${SQLITE_AUTOCONF_TARBALL}-${SQLITE_SRC_VERSION}.tar.gz ## Extract tarball
 
@@ -61,10 +61,9 @@ sqlite-dll: setup-amalgamation
 
 libsqlite: setup-autoconf
 	## Change directory into tarball
-	@cd ${SQLITE_AUTOCONF_TARBALL}-${SQLITE_SRC_VERSION} && \ 
-		## Build SQLite3 Source Code and libraries
-		test -d build || mkdir -pv build && \
-			./configure; make
+	@cd ${SQLITE_AUTOCONF_TARBALL}-${SQLITE_SRC_VERSION} \
+		&& test -d build || mkdir -pv build && cd build \
+		&& ../configure; make ## Build SQLite3 Source Code and libraries
 
 ### Installation
 
