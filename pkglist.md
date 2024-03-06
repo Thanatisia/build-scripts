@@ -17,6 +17,19 @@ for contributors, please specify your project/package names here if it is not ye
         + Method: Manual Compilation
         + Build System: make
         + Package Managers: apt
+- baskerville
+    - bspwm
+        + Method: Manual Compilation
+        + Build System: make
+        - Package Managers: 
+            + apt
+            + pacman
+    - sxhkd
+        + Method: Manual Compilation
+        + Build System: make
+        - Package Managers: 
+            + apt
+            + pacman
 - davatorium
     - [rofi](packages/github/davatorium/rofi)
         + Method: Manual Compilation via GNU Build System
@@ -79,6 +92,16 @@ for contributors, please specify your project/package names here if it is not ye
         + Package Managers: apt, pacman
 
 ### GitLab Distributed Repository Packages
+- archlinux
+    - devtools : ArchLinux Development tools and utilities
+        + Method: Manual Compilation
+        + Build System: make
+        + Package Managers: apt
+- pacman
+    - pacman : ArchLinux package manager
+        + Method: Manual Compilation
+        + Build System: meson, ninja
+        + Package Managers: apt
 - qemu
     - qemu-all : Qemu compiled for all machines
         + Method: Manual Compilation
@@ -97,6 +120,11 @@ for contributors, please specify your project/package names here if it is not ye
 - Linux
     - Linux Kernel
         + Method: Manual Compilation
+- sqlite
+    - sqlite : Standalone File-based Relational Database Management System
+        + Method: Makefile recipe (Testing)
+        + Build System: make
+        + Package Managers: general/agnostic
 - suckless
     - dmenu
         + Method: Manual Compilation

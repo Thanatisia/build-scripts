@@ -4,6 +4,13 @@
     The following are changes made to the repository.
 ```
 
+## Table of Contents
++ [2023-12-03](#2023-12-03)
++ [2023-12-04](#2023-12-04)
++ [2024-01-06](#2024-01-06)
++ [2024-02-26](#2024-02-26)
++ [2024-03-06](#2024-03-06)
+
 ## Updates
 
 ### Update 2022-11-01 2111H | v0.1.0
@@ -53,3 +60,44 @@
 - Updated package list with new packages and new layout
 - Updated README with new QoL improvements (WIP), tasks and usage examples
 ```
+
+### 2023-12-03
+#### 2307H
+- New
+    - Added new build scripts for packages and to be tested
+        - Using apt
+            - archlinux/devtools
+            - pacman/pacman
+- Updates
+    - Updated package list with new packages
+
+### 2023-12-04
+#### 2258H
+- Updates
+    - Updated document 'README.md' in 'packages/gitlab/archlinux/devtools'
+        - Added step to Build or Compile all targets using Makefile
+
+### 2024-01-06
+#### 1342H
+- New
+    - Added new apt project build scripts for github project 'baskerville/bspwm'
+        - Temporarily using the pacman's single-file compile.sh system
+    - Added new apt project build scripts for github project 'baskerville/sxhkd'
+        - Temporarily using the pacman's single-file compile.sh system
+- Updates
+    - Updated package list with new packages
+
+### 2024-02-26
+#### 2016H
+- New
+    + Added new build scripts for 'sqlite/sqlite' in 'packages/others' using Makefile recipes (to be tested)
+
+### 2024-03-06
+#### 1715H
+- Updates
+    - Updated Makefile 'unix.Makefile' in 'packages/others/sqlite/sqlite/general/'
+        + Fixed unit test and Configuration steps
+    - Updated Makefile 'windows.Makefile' in 'packages/others/sqlite/sqlite/general/'
+        + Added new dependenc(ies)
+        + Fixed unit test and Configuration steps
+
