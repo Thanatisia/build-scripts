@@ -27,7 +27,7 @@ build()
     : "
     Build package from source
     "
-    ${CC} ${CFLAGS} build
+    BUILDTOOLVER="${pkgver}-${pkgrel}-${arch}" ${CC} ${CFLAGS} all
 }
 
 main()

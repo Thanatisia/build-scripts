@@ -119,3 +119,9 @@
         + Added variables, Instructions/Recipe/Targets for a Makefile-based build script
         + Added snippet/templates for a build from source Makefile
 
+#### 2247H
+- Updates
+    - Updated gitlab project 'archlinux/devtools'
+        + Added dependencies
+        + Added install function to build script 'start.sh'
+
