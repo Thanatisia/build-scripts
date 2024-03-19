@@ -10,6 +10,7 @@
 + [2024-01-06](#2024-01-06)
 + [2024-02-26](#2024-02-26)
 + [2024-03-06](#2024-03-06)
++ [2024-03-19](#2024-03-19)
 
 ## Updates
 
@@ -100,4 +101,21 @@
     - Updated Makefile 'windows.Makefile' in 'packages/others/sqlite/sqlite/general/'
         + Added new dependenc(ies)
         + Fixed unit test and Configuration steps
+
+### 2024-03-19
+#### 2222H
+- New
+    - Added new directory 'Makefiles' in 'docs/contributions/templates/' to hold all Makefile templates for project builds
+        - Added new directory 'GitHub' to hold all GitHub-based project source build Makefiles
+            + Added new Makefile 'apt.Makefile' for apt-based installation
+            + Added new Makefile 'pacman.Makefile' for pacman-based installation
+    - Added new Makefile(s) to GitHub project 'neovim/neovim' in 'packages/github/neovim/neovim'
+        + apt.Makefile    : apt-based Makefile to build from source in 1 file
+        + pacman.Makefile : pacman-based Makefile to build from source in 1 file
+
+- Updates
+    + Aiming to decommission the current multi-script build system and modify to create a standard build repository using Makefile
+    - Updated document 'CONTRIBUTING.md'
+        + Added variables, Instructions/Recipe/Targets for a Makefile-based build script
+        + Added snippet/templates for a build from source Makefile
 
