@@ -31,7 +31,7 @@ help:
 
 install-dependencies:
 	## Install dependencies
-	@pacman -Syu && pacman -S "${DEPENDENCIES[@]}"
+	@pacman -Syu && pacman -S ${DEPENDENCIES}
 
 setup:
 	### Clone repository if doesnt exist

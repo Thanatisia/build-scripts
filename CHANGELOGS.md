@@ -154,3 +154,9 @@
         + Fixed dependencies and
         + Fixed target 'install-depedenncies'
 
+#### 1814H
+- Updates
+    - Updated Makefile 'pacman.Makefile' for GitHub package 'neovim/neovim' in 'packages/github/neovim/neovim/Makefiles'
+        + Fixed dependencies and
+        + Fixed target 'install-depedencies'
+
