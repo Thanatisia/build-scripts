@@ -11,6 +11,7 @@
 + [2024-02-26](#2024-02-26)
 + [2024-03-06](#2024-03-06)
 + [2024-03-19](#2024-03-19)
++ [2024-03-20](#2024-03-20)
 
 ## Updates
 
@@ -124,4 +125,10 @@
     - Updated gitlab project 'archlinux/devtools'
         + Added dependencies
         + Added install function to build script 'start.sh'
+
+### 2024-03-20
+#### 0942H
+- Updates
+    - Updated GitHub project 'git/git'
+        + Added dependencies
 

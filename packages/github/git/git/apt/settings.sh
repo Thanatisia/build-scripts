@@ -4,7 +4,7 @@
 REPO_AUTHOR="git"
 REPO_PROJECT="git"
 REPO_DOMAIN="https://github.com"
-DEPENDENCIES=(build-essential make gcc g++ asciidoc libcurl4-openssl-dev) # Set Dependencies
+DEPENDENCIES=(build-essential make autoconf gettext gcc g++ asciidoc libcurl4-openssl-dev) # Set Dependencies
 EDITOR="vim" # Set Default Editor
 
 ## Derivatives
