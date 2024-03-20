@@ -142,3 +142,9 @@
 - Updates
     - Updated documents 'apt.Makefile' and 'pacman.Makefile' in 'docs/contributions/templates/Makefiles/GitHub/'
         + Added targets/instructions and variables for building projects from source based on the maintainer/project author's instructions
+
+#### 1444H
+- Updates
+    - Updated document 'CONTRIBUTING.md'
+        + Added explanation and example usage of the Makefile template recipe/targets
+
