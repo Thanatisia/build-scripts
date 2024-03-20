@@ -132,3 +132,9 @@
     - Updated GitHub project 'git/git'
         + Added dependencies
 
+#### 1425H
+- New
+    - Added new directory 'Makefiles' to GitHub package 'git/git' in 'packages/github/git/git' to hold the Makefile build scripts
+        + Added new Makefile 'apt.Makefile' for building 'git/git' using apt-based package management
+        + Added new Makefile 'pacman.Makefile' for building 'git/git' using pacman-based package management
+
