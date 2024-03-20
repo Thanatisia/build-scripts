@@ -138,3 +138,7 @@
         + Added new Makefile 'apt.Makefile' for building 'git/git' using apt-based package management
         + Added new Makefile 'pacman.Makefile' for building 'git/git' using pacman-based package management
 
+#### 1434H
+- Updates
+    - Updated documents 'apt.Makefile' and 'pacman.Makefile' in 'docs/contributions/templates/Makefiles/GitHub/'
+        + Added targets/instructions and variables for building projects from source based on the maintainer/project author's instructions

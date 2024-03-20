@@ -13,6 +13,8 @@ PKG_AUTHOR = project-author
 PKG_NAME = package-name
 BIN_NAME = "binaries - optional"
 SRC_URL = https://github.com/$(PKG_AUTHOR)/$(PKG_NAME)
+INSTALL_PATH=/usr/local
+CONFIGURE_OPTS="--prefix=$(INSTALL_PATH)"
 
 SHELL := /bin/bash
 .PHONY := help install-dependencies setup build install uninstall clean enter
@@ -23,9 +25,16 @@ help:
 	## Display help message
 	@echo -e "[+] help  : Display Help message"
 	@echo -e "[+] install-dependencies : Install system packages"
+	@echo -e "[+] clone : Clone repository if doesnt exist and initialize submodules"
+	@echo -e "[+] configure : Configure the repository source files before building"
 	@echo -e "[+] setup : Setup pre-requisites"
-	@echo -e "[+] build : Build the project from Source"
-	@echo -e "[+] install : Install and move the compiled binary to the host system"
+	@echo -e "[+] build : Compile/Build everything"
+	@echo -e "[+] build-all : Build the project from Source"
+	@echo -e "[+] build-doc : Build the project documentations from Source"
+	@echo -e "[+] install: Install everything to the host system"
+	@echo -e "[+] install-bin : Install and move the compiled binary to the host system"
+	@echo -e "[+] install-html : Install HTML to the host system"
+	@echo -e "[+] install-doc : Install documentations to the host system"
 	@echo -e "[+] uninstall : Uninstall and remove the installed files from the host system"
 	@echo -e "[+] clean : Clean/Remove all temporarily-generated files from repository"
 	@echo -e "[+] enter : Enter the package repository"
@@ -34,35 +43,64 @@ install-dependencies:
 	## Install dependencies
 	@apt update && apt upgrade && apt install "${DEPENDENCIES[@]}"
 
-setup:
-	### Clone repository if doesnt exist
+clone:
+	### Clone repository if doesnt exist and initialize submodules
 	@test -d ${PKG_NAME} || git clone "${SRC_URL}"
 
-build: setup
+configure: clone
+	## Configure the repository source files before building
+	@cd ${PKG_NAME}; ${CC} configure && ./configure ${CONFIGURE_OPTS}
+
+setup: clone configure
+	## Setup and perform pre-requisites
+
+build: build-all build-doc
+	## Compile/Build everything
+
+build-all: setup
     ## Compile and Build/make the source code into an executable 
-	@cd ${PKG_NAME}; ${CC} ${CFLAGS} && \
+	@cd ${PKG_NAME}; ${CC} ${CFLAGS} all && \
 		echo -e "[+] Compilation Successful." || \
 		echo -e "[-] Compilation Error."
 
-install: setup
+build-doc: setup
+	## Compile and Build documentations
+	@cd ${PKG_NAME}; ${CC} ${CFLAGS} doc && \
+		echo -e "[+] Compilation Successful." || \
+		echo -e "[-] Compilation Error."
+
+install: install-bin install-html install-doc
+	## Install everything to the host system
+
+install-bin: clone
     ## Install and move the compiled binary to the host system
-	@cd ${PKG_NAME}; ${CC} install && \
-        echo -e "[+] Installation Successful." || \
-        echo -e "[-] Installation Error."
+	@cd ${PKG_NAME}; ${CC} ${CFLAGS} install && \
+        echo -e "[+] Executable Installation Successful." || \
+        echo -e "[-] Executable Installation Error."
 
-uninstall: setup
+install-html: clone
+	## Install HTML to the host system
+	@cd ${PKG_NAME}; ${CC} ${CFLAGS} install-html && \
+        echo -e "[+] HTML Documentations Installation Successful." || \
+        echo -e "[-] HTML Documentations Installation Error."
+
+install-doc: clone
+	## Install documentations to the host system
+	@cd ${PKG_NAME}; ${CC} ${CFLAGS} install-doc && \
+		echo -e "[+] Documentations Installation Successful." || \
+		echo -e "[+] Documentations Installation Error."
+
+uninstall: clone
     ## Uninstall and remove installed files from the host system
-	@cd ${PKG_NAME}; ${CC} uninstall && \
-        echo -e "[+] Installation Successful." || \
-        echo -e "[-] Installation Error."
+	### Place your uninstallation/removal steps here
 
-clean: setup
+clean: clone
 	## Cleanup and remove temporary files generated during compilation
 	@cd ${PKG_NAME}; ${CC} clean && \
         echo -e "[+] Cleanup Successful." || \
         echo -e "[-] Cleanup Error."
 
-enter:
+enter: clone
 	## Enter the package repository
 	@cd ${PKG_NAME};
 
