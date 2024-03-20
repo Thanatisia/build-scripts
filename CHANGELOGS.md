@@ -160,3 +160,10 @@
         + Fixed dependencies and
         + Fixed target 'install-depedencies'
 
+#### 1815H
+- New
+    + Added new directory 'Makefiles' in 'packages/github/neovim/neovim/'
+
+- Updates
+    + Migrated 'apt.Makefile' and 'pacman.Makefile' in 'packages/github/neovim/neovim/' to 'packages/github/neovim/neovim/Makefiles'
+
