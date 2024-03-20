@@ -4,7 +4,7 @@
 ### Build Info
 CC = make
 CFLAGS = 
-DEPENDENCIES = build-essential make autoconf gettext gcc g++ asciidoc libcurl4-openssl-dev libexpat1-dev
+DEPENDENCIES = base-devel make autoconf gettext gcc asciidoc curl expat
 
 ### Package Information
 PKG_AUTHOR = git
@@ -40,7 +40,7 @@ help:
 
 install-dependencies:
 	## Install dependencies
-	@pacman -Syu && pacman -S "${DEPENDENCIES[@]}"
+	@pacman -Syu && pacman -S ${DEPENDENCIES}
 
 clone:
 	### Clone repository if doesnt exist and initialize submodules

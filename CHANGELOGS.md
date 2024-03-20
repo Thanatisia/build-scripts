@@ -148,3 +148,9 @@
     - Updated document 'CONTRIBUTING.md'
         + Added explanation and example usage of the Makefile template recipe/targets
 
+#### 1711H
+- Updates
+    - Updated Makefile 'pacman.Makefile' for GitHub package 'git/git' in 'packages/github/git/git/Makefiles'
+        + Fixed dependencies and
+        + Fixed target 'install-depedenncies'
+
