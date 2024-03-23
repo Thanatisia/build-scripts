@@ -17,7 +17,7 @@ INSTALL_PATH=/usr/local
 CONFIGURE_OPTS="--prefix=$(INSTALL_PATH)"
 
 SHELL := /bin/bash
-.PHONY := help install-dependencies setup build install uninstall clean enter
+.PHONY := help install-dependencies clone configure setup build build-all build-doc install install-bin install-html install-doc uninstall clean enter
 .DEFAULT_RULES := help
 
 ## Recipe/Targets
@@ -41,7 +41,7 @@ help:
 
 install-dependencies:
 	## Install dependencies
-	@pacman -Syu && pacman -S "${DEPENDENCIES[@]}"
+	@pacman -Syu && pacman -S ${DEPENDENCIES}
 
 clone:
 	### Clone repository if doesnt exist and initialize submodules

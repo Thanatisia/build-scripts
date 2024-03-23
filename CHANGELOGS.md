@@ -176,3 +176,12 @@
     - Updated Makefile 'apt.Makefile' for GitHub package 'git/git' in 'packages/github/git/git/Makefiles'
         + Fixed target 'install-depedencies'
 
+#### 1417H
+- Updates
+    - Updated Makefile example template 'apt.Makefile' in 'docs/contributions/templates/Makefiles/GitHub/'
+        + Added new targets to .PHONY
+        + Fixed dependencies call in 'install-dependencies'
+    - Updated Makefile example template 'pacman.Makefile' in 'docs/contributions/templates/Makefiles/GitHub/'
+        + Added new targets to .PHONY
+        + Fixed dependencies call in 'install-dependencies'
+
