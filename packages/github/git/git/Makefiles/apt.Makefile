@@ -40,7 +40,7 @@ help:
 
 install-dependencies:
 	## Install dependencies
-	@apt update && apt upgrade && apt install "${DEPENDENCIES[@]}"
+	@apt update && apt upgrade && apt install ${DEPENDENCIES}
 
 clone:
 	### Clone repository if doesnt exist and initialize submodules

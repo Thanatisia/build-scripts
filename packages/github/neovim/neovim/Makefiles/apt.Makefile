@@ -31,7 +31,7 @@ help:
 
 install-dependencies:
 	## Install dependencies
-	@apt update && apt upgrade && apt install "${DEPENDENCIES[@]}"
+	@apt update && apt upgrade && apt install ${DEPENDENCIES}
 
 setup:
 	### Clone repository if doesnt exist

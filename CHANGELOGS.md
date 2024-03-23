@@ -12,6 +12,7 @@
 + [2024-03-06](#2024-03-06)
 + [2024-03-19](#2024-03-19)
 + [2024-03-20](#2024-03-20)
++ [2024-03-23](#2024-03-23)
 
 ## Updates
 
@@ -166,4 +167,12 @@
 
 - Updates
     + Migrated 'apt.Makefile' and 'pacman.Makefile' in 'packages/github/neovim/neovim/' to 'packages/github/neovim/neovim/Makefiles'
+
+### 2024-03-23
+#### 1413H
+- Updates
+    - Updated Makefile 'apt.Makefile' for GitHub package 'neovim/neovim' in 'packages/github/neovim/neovim/Makefiles'
+        + Fixed target 'install-depedencies'
+    - Updated Makefile 'apt.Makefile' for GitHub package 'git/git' in 'packages/github/git/git/Makefiles'
+        + Fixed target 'install-depedencies'
 
