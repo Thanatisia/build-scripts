@@ -10,6 +10,9 @@
 + [2024-01-06](#2024-01-06)
 + [2024-02-26](#2024-02-26)
 + [2024-03-06](#2024-03-06)
++ [2024-03-19](#2024-03-19)
++ [2024-03-20](#2024-03-20)
++ [2024-03-23](#2024-03-23)
 
 ## Updates
 
@@ -100,4 +103,90 @@
     - Updated Makefile 'windows.Makefile' in 'packages/others/sqlite/sqlite/general/'
         + Added new dependenc(ies)
         + Fixed unit test and Configuration steps
+
+### 2024-03-19
+#### 2222H
+- New
+    - Added new directory 'Makefiles' in 'docs/contributions/templates/' to hold all Makefile templates for project builds
+        - Added new directory 'GitHub' to hold all GitHub-based project source build Makefiles
+            + Added new Makefile 'apt.Makefile' for apt-based installation
+            + Added new Makefile 'pacman.Makefile' for pacman-based installation
+    - Added new Makefile(s) to GitHub project 'neovim/neovim' in 'packages/github/neovim/neovim'
+        + apt.Makefile    : apt-based Makefile to build from source in 1 file
+        + pacman.Makefile : pacman-based Makefile to build from source in 1 file
+
+- Updates
+    + Aiming to decommission the current multi-script build system and modify to create a standard build repository using Makefile
+    - Updated document 'CONTRIBUTING.md'
+        + Added variables, Instructions/Recipe/Targets for a Makefile-based build script
+        + Added snippet/templates for a build from source Makefile
+
+#### 2247H
+- Updates
+    - Updated gitlab project 'archlinux/devtools'
+        + Added dependencies
+        + Added install function to build script 'start.sh'
+
+### 2024-03-20
+#### 0942H
+- Updates
+    - Updated GitHub project 'git/git'
+        + Added dependencies
+
+#### 1425H
+- New
+    - Added new directory 'Makefiles' to GitHub package 'git/git' in 'packages/github/git/git' to hold the Makefile build scripts
+        + Added new Makefile 'apt.Makefile' for building 'git/git' using apt-based package management
+        + Added new Makefile 'pacman.Makefile' for building 'git/git' using pacman-based package management
+
+#### 1434H
+- Updates
+    - Updated documents 'apt.Makefile' and 'pacman.Makefile' in 'docs/contributions/templates/Makefiles/GitHub/'
+        + Added targets/instructions and variables for building projects from source based on the maintainer/project author's instructions
+
+#### 1444H
+- Updates
+    - Updated document 'CONTRIBUTING.md'
+        + Added explanation and example usage of the Makefile template recipe/targets
+
+#### 1711H
+- Updates
+    - Updated Makefile 'pacman.Makefile' for GitHub package 'git/git' in 'packages/github/git/git/Makefiles'
+        + Fixed dependencies and
+        + Fixed target 'install-depedenncies'
+
+#### 1814H
+- Updates
+    - Updated Makefile 'pacman.Makefile' for GitHub package 'neovim/neovim' in 'packages/github/neovim/neovim/Makefiles'
+        + Fixed dependencies and
+        + Fixed target 'install-depedencies'
+
+#### 1815H
+- New
+    + Added new directory 'Makefiles' in 'packages/github/neovim/neovim/'
+
+- Updates
+    + Migrated 'apt.Makefile' and 'pacman.Makefile' in 'packages/github/neovim/neovim/' to 'packages/github/neovim/neovim/Makefiles'
+
+### 2024-03-23
+#### 1413H
+- Updates
+    - Updated Makefile 'apt.Makefile' for GitHub package 'neovim/neovim' in 'packages/github/neovim/neovim/Makefiles'
+        + Fixed target 'install-depedencies'
+    - Updated Makefile 'apt.Makefile' for GitHub package 'git/git' in 'packages/github/git/git/Makefiles'
+        + Fixed target 'install-depedencies'
+
+#### 1417H
+- Updates
+    - Updated Makefile example template 'apt.Makefile' in 'docs/contributions/templates/Makefiles/GitHub/'
+        + Added new targets to .PHONY
+        + Fixed dependencies call in 'install-dependencies'
+    - Updated Makefile example template 'pacman.Makefile' in 'docs/contributions/templates/Makefiles/GitHub/'
+        + Added new targets to .PHONY
+        + Fixed dependencies call in 'install-dependencies'
+
+#### 1422H
+- Updates
+    - Updated document 'CONTRIBUTING.md'
+        + Fixed Makefile template configurations
 

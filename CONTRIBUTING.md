@@ -82,8 +82,150 @@ Please follow these steps when contributing to the repository.
     5. cleanup.sh     : To contain cleanup processes after the compilation/build/make functions (i.e. make clean)
     6. start.sh       : This is the primary main start script, this script will take the scripts you specified to run, and run them as required
     7. uninstaller.sh : To contain uninstallation processes such as removal of the installed files installed either by the script, or steps provided by the maintainer.
+- Makefiles
+    - Variables/Arguments
+        - Compiler/Interpreter
+            + `CC = [cross-compiler]` : Specify the Cross-Compiler used to compile/run the source files
+            + `CFLAGS = [flags]` : Specify the compile flags to parse into the cross-compiler
+            + `DEPENDENCIES = your dependencies here`: Specify the dependencies to install to the system
+        - Package Information
+            + `PKG_AUTHOR = project-author` : Specify the project/package author
+            + `PKG_NAME = package-name` : Specify the project/package name
+            + `BIN_NAME = "binaries - optional"` : Specify the binaries installed (separate all binaries with a space delimiter)
+            + `SRC_URL = https://github.com/$(PKG_AUTHOR)/$(PKG_NAME)` : Specify the project repository source URL (github.com = domain)
+            + `INSTALL_PATH=/usr/local` : Specify the target PREFIX (installation directory) to install the build files to
+            + `CONFIGURE_OPTS="--prefix=$(INSTALL_PATH)"` : Specify the options to configure into the project source codes
+    - Recipe/Targets
+        + help                 : Display Help message
+        + install-dependencies : Install system packages
+        + clone                : Clone repository if doesnt exist and initialize submodules
+        + configure            : Configure the repository source files before building
+        + setup                : Setup pre-requisites
+        + build                : Compile/Build everything
+        + build-all            : Build the project from Source
+        + build-doc            : Build the project documentations from Source
+        + install              : Install everything to the host system
+        + install-bin          : Install and move the compiled binary to the host system
+        + install-html         : Install HTML to the host system
+        + install-doc          : Install documentations to the host system
+        + uninstall            : Uninstall and remove the installed files from the host system
+        + clean                : Clean/Remove all temporarily-generated files from repository
+        + enter                : Enter the package repository
 
 ### GitHub
+#### Makefile
+```make
+# Makefile
+# for Building from Source projects from GitHub
+
+## Variables/Ingredients
+### Build Info
+CC = make
+CFLAGS = 
+DEPENDENCIES = your dependencies here
+
+### Package Information
+PKG_AUTHOR = project-author
+PKG_NAME = package-name
+BIN_NAME = "binaries - optional"
+SRC_URL = https://github.com/$(PKG_AUTHOR)/$(PKG_NAME)
+INSTALL_PATH=/usr/local
+CONFIGURE_OPTS="--prefix=$(INSTALL_PATH)"
+
+SHELL := /bin/bash
+.PHONY := help install-dependencies clone configure setup build build-all build-doc install install-bin install-html install-doc uninstall clean enter
+.DEFAULT_RULES := help
+
+## Recipe/Targets
+help:
+	## Display help message
+	@echo -e "[+] help  : Display Help message"
+	@echo -e "[+] install-dependencies : Install system packages"
+	@echo -e "[+] clone : Clone repository if doesnt exist and initialize submodules"
+	@echo -e "[+] configure : Configure the repository source files before building"
+	@echo -e "[+] setup : Setup pre-requisites"
+	@echo -e "[+] build : Compile/Build everything"
+	@echo -e "[+] build-all : Build the project from Source"
+	@echo -e "[+] build-doc : Build the project documentations from Source"
+	@echo -e "[+] install: Install everything to the host system"
+	@echo -e "[+] install-bin : Install and move the compiled binary to the host system"
+	@echo -e "[+] install-html : Install HTML to the host system"
+	@echo -e "[+] install-doc : Install documentations to the host system"
+	@echo -e "[+] uninstall : Uninstall and remove the installed files from the host system"
+	@echo -e "[+] clean : Clean/Remove all temporarily-generated files from repository"
+	@echo -e "[+] enter : Enter the package repository"
+
+install-dependencies:
+	## Install dependencies
+    ### apt
+	@apt update && apt upgrade && apt install ${DEPENDENCIES}
+    ### pacman
+	@pacman -Syu && pacman -S ${DEPENDENCIES}
+
+clone:
+	### Clone repository if doesnt exist and initialize submodules
+	@test -d ${PKG_NAME} || git clone "${SRC_URL}"
+
+configure: clone
+	## Configure the repository source files before building
+	@cd ${PKG_NAME}; ${CC} configure && ./configure ${CONFIGURE_OPTS}
+
+setup: clone configure
+	## Setup and perform pre-requisites
+
+build: build-all build-doc
+	## Compile/Build everything
+
+build-all: setup
+    ## Compile and Build/make the source code into an executable 
+	@cd ${PKG_NAME}; ${CC} ${CFLAGS} all && \
+		echo -e "[+] Compilation Successful." || \
+		echo -e "[-] Compilation Error."
+
+build-doc: setup
+	## Compile and Build documentations
+	@cd ${PKG_NAME}; ${CC} ${CFLAGS} doc && \
+		echo -e "[+] Compilation Successful." || \
+		echo -e "[-] Compilation Error."
+
+install: install-bin install-html install-doc
+	## Install everything to the host system
+
+install-bin: clone
+    ## Install and move the compiled binary to the host system
+	@cd ${PKG_NAME}; ${CC} ${CFLAGS} install && \
+        echo -e "[+] Executable Installation Successful." || \
+        echo -e "[-] Executable Installation Error."
+
+install-html: clone
+	## Install HTML to the host system
+	@cd ${PKG_NAME}; ${CC} ${CFLAGS} install-html && \
+        echo -e "[+] HTML Documentations Installation Successful." || \
+        echo -e "[-] HTML Documentations Installation Error."
+
+install-doc: clone
+	## Install documentations to the host system
+	@cd ${PKG_NAME}; ${CC} ${CFLAGS} install-doc && \
+		echo -e "[+] Documentations Installation Successful." || \
+		echo -e "[+] Documentations Installation Error."
+
+uninstall: clone
+    ## Uninstall and remove installed files from the host system
+	### Place your uninstallation/removal steps here
+
+clean: clone
+	## Cleanup and remove temporary files generated during compilation
+	@cd ${PKG_NAME}; ${CC} clean && \
+        echo -e "[+] Cleanup Successful." || \
+        echo -e "[-] Cleanup Error."
+
+enter: clone
+	## Enter the package repository
+	@cd ${PKG_NAME};
+
+```
+
+#### Shellscript (To be decomissioned in favour of Makefiles)
 - settings.sh
     ```console
     # Build Info
