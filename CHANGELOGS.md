@@ -185,3 +185,8 @@
         + Added new targets to .PHONY
         + Fixed dependencies call in 'install-dependencies'
 
+#### 1422H
+- Updates
+    - Updated document 'CONTRIBUTING.md'
+        + Fixed Makefile template configurations
+
