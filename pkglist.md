@@ -50,7 +50,7 @@ for contributors, please specify your project/package names here if it is not ye
 - neovim
     - neovim
         + Method: Manual Compilation
-        + Package Managers: apt, pacman
+        + Package Managers: apt, pacman, pkg
 - neutrinolabs
     - xorgxrdp
         + Method: Manual Compilation
