@@ -13,6 +13,7 @@
 + [2024-03-19](#2024-03-19)
 + [2024-03-20](#2024-03-20)
 + [2024-03-23](#2024-03-23)
++ [2024-03-31](#2024-03-31)
 
 ## Updates
 
@@ -189,4 +190,9 @@
 - Updates
     - Updated document 'CONTRIBUTING.md'
         + Fixed Makefile template configurations
+
+### 2024-03-31
+#### 0243H
+- New
+    + Added new Makefile "pkg.Makefile" in package "neovim/neovim" for Termux package manager "pkg"
 
