@@ -82,7 +82,7 @@ for contributors, please specify your project/package names here if it is not ye
     - rust
         + Build System: Makefile (make)
         + Method: Manual Compilation
-        + Supported Package Managers: apt
+        + Supported Package Managers: apt, pacman
 - shellinabox
     - shellinabox
         + Method: Manual Compilation

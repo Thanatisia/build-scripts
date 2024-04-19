@@ -15,6 +15,7 @@
 + [2024-03-23](#2024-03-23)
 + [2024-03-31](#2024-03-31)
 + [2024-04-16](#2024-04-16)
++ [2024-04-19](#2024-04-19)
 
 ## Updates
 
@@ -211,4 +212,13 @@
 - Updates
     - Updated document 'pkglist.md'
         + Added new GitHub package
+
+### 2024-04-19
+#### 1058H
+- New
+    + Added new Makefile 'pacman.Makefile' to 'rust-lang/rust' for pacman support
+
+- Updates
+    - Updated document 'pkglist.md'
+        + Updated supported Package Manager to package 'rust-lang/rust'
 
