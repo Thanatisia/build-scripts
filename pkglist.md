@@ -74,6 +74,15 @@ for contributors, please specify your project/package names here if it is not ye
     - cpython
         + Method: Manual Compilation
         + Package Managers: apt, pacman (WIP)
+- rust-lang
+    - cargo
+        + Build System: Makefile (make)
+        + Method: Manual Compilation
+        + Supported Package Managers: apt
+    - rust
+        + Build System: Makefile (make)
+        + Method: Manual Compilation
+        + Supported Package Managers: apt, pacman
 - shellinabox
     - shellinabox
         + Method: Manual Compilation

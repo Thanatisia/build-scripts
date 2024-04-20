@@ -14,6 +14,8 @@
 + [2024-03-20](#2024-03-20)
 + [2024-03-23](#2024-03-23)
 + [2024-03-31](#2024-03-31)
++ [2024-04-16](#2024-04-16)
++ [2024-04-19](#2024-04-19)
 
 ## Updates
 
@@ -195,4 +197,28 @@
 #### 0243H
 - New
     + Added new Makefile "pkg.Makefile" in package "neovim/neovim" for Termux package manager "pkg"
+
+### 2024-04-16
+#### 2214H
+- New
+    - Added new directory GitHub project author 'rust-lang' in 'packages/github/'
+        - Added new repository directory 'cargo' for the Rust Package Manager project repository
+            - Added new directory 'Makefiles' for storing all Makefiles
+                + Added new Makefile 'apt.Makefile' for apt-based distributions
+        - Added new repository directory 'rust' for the Rust compiler/toolchain project repository
+            - Added new directory 'Makefiles' for storing all Makefiles
+                + Added new Makefile 'apt.Makefile' for apt-based distributions
+
+- Updates
+    - Updated document 'pkglist.md'
+        + Added new GitHub package
+
+### 2024-04-19
+#### 1058H
+- New
+    + Added new Makefile 'pacman.Makefile' to 'rust-lang/rust' for pacman support
+
+- Updates
+    - Updated document 'pkglist.md'
+        + Updated supported Package Manager to package 'rust-lang/rust'
 
