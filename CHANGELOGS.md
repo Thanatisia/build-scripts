@@ -16,6 +16,7 @@
 + [2024-03-31](#2024-03-31)
 + [2024-04-16](#2024-04-16)
 + [2024-04-19](#2024-04-19)
++ [2024-04-23](#2024-04-23)
 
 ## Updates
 
@@ -221,4 +222,17 @@
 - Updates
     - Updated document 'pkglist.md'
         + Updated supported Package Manager to package 'rust-lang/rust'
+
+### 2024-04-23
+#### 2207H
+- New
+    - Added new directory GitHub project author 'artempyanykh' in 'packages/github/'
+        - Added new repository directory 'marksman' for the Markdown LSP server project repository
+            - Added new directory 'Makefiles' for storing all Makefiles
+                + Added new Makefile 'apt.Makefile' for apt-based distributions
+                + Added new Makefile 'pacman.Makefile' for pacman-based distributions
+
+- Updates
+    - Updated document 'pkglist.md'
+        + Updated supported Package Manager to package 'artempyanykh/marksman'
 
