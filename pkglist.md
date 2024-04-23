@@ -17,6 +17,11 @@ for contributors, please specify your project/package names here if it is not ye
         + Method: Manual Compilation
         + Build System: make
         + Package Managers: apt
+- artempyanykh
+    - marksman
+        + Method: Manual Compilation
+        + Build System: make
+        + Package Managers: apt, pacman
 - baskerville
     - bspwm
         + Method: Manual Compilation
