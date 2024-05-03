@@ -43,6 +43,11 @@ for contributors, please specify your project/package names here if it is not ye
     - jdtls
         + Method: Manual Compilation via Maven
         + Package Managers: pacman
+- fastfetch-cli
+    - fastfetch
+        + Method: Manual Compilation
+        + Build System: cmake
+        + Package Managers: apt, pacman, termux-pkg
 - git
     - git : Version Control system
         + Method: Manual Compilation
