@@ -17,6 +17,7 @@
 + [2024-04-16](#2024-04-16)
 + [2024-04-19](#2024-04-19)
 + [2024-04-23](#2024-04-23)
++ [2024-05-03](#2024-05-03)
 
 ## Updates
 
@@ -235,4 +236,19 @@
 - Updates
     - Updated document 'pkglist.md'
         + Updated supported Package Manager to package 'artempyanykh/marksman'
+
+### 2024-05-03
+#### 1104H
+- New
+    - Added new directory GitHub project author 'fastfetch-cli' in 'packages/github/'
+        - Added new repository directory 'fastfetch' for the system information fetch CLI utility like neofetch but written mostly in C
+            + Added new document 'README.md'
+            - Added new directory 'Makefiles' for storing all Makefiles
+                + Added new Makefile 'apt.Makefile' for apt-based distributions
+                + Added new Makefile 'pacman.Makefile' for pacman-based distributions
+                + Added new Makefile 'pkg.Makefile' for termux (pkg)-based distributions
+
+- Updates
+    - Updated document 'pkglist.md'
+        + Updated supported Package Manager to package 'fastfetch-cli/fastfetch'
 
