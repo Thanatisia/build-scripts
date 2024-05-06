@@ -93,6 +93,10 @@ for contributors, please specify your project/package names here if it is not ye
         + Build System: Makefile (make)
         + Method: Manual Compilation
         + Supported Package Managers: apt, pacman
+    - rust-analyzer
+        + Build System: Makefile (make)
+        + Method: Manual Compilation
+        + Supported Package Managers: apt, pacman
 - shellinabox
     - shellinabox
         + Method: Manual Compilation
