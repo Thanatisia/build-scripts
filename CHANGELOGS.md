@@ -270,3 +270,14 @@
     - Updated document 'README.md' in 'packages/others/suckless/dmenu'
         + Added package dependencies
 
+#### 2331H
+- New
+    - Added new repository directory 'rust-analyzer' in 'packages/github/rust-lang' for the Rust Language Server Protocol (LSP) Pack
+        + Added new document 'README.md'
+        - Added new directory 'Makefiles' for storing all Makefiles
+            + Added new Makefile 'apt.Makefile' for apt-based distributions
+            + Added new Makefile 'pacman.Makefile' for pacman-based distributions
+- Updates
+    - Updated document 'pkglist.md'
+        + Updated supported Package Manager to package 'rust-lang/rust-analyzer'
+
