@@ -18,6 +18,7 @@
 + [2024-04-19](#2024-04-19)
 + [2024-04-23](#2024-04-23)
 + [2024-05-03](#2024-05-03)
++ [2024-05-06](#2024-05-06)
 
 ## Updates
 
@@ -251,4 +252,21 @@
 - Updates
     - Updated document 'pkglist.md'
         + Updated supported Package Manager to package 'fastfetch-cli/fastfetch'
+
+### 2024-05-06
+#### 1107H
+- New
+    - Added new directory 'Makefiles' in 'packages/others/suckless/slock' for holding Makefile recipes to building slock from source
+        + Added new Makefile 'apt.Makefile' for apt-based distributions
+        + Added new Makefile 'pacman.Makefile' for pacman-based distributions
+        + Added new Makefile 'pkg.Makefile' for termux (pkg)-based distributions
+    - Added new directory 'Makefiles' in 'packages/others/suckless/dmenu' for holding Makefile recipes to building dmenu from source
+        + Added new Makefile 'apt.Makefile' for apt-based distributions
+        + Added new Makefile 'pacman.Makefile' for pacman-based distributions
+        + Added new Makefile 'pkg.Makefile' for termux (pkg)-based distributions
+- Updates
+    - Updated document 'README.md' in 'packages/others/suckless/slock'
+        + Added package dependencies
+    - Updated document 'README.md' in 'packages/others/suckless/dmenu'
+        + Added package dependencies
 

@@ -22,9 +22,13 @@ Alternatives to includes
 
 ## Setup
 ### Dependencies
++ git
++ make
 - To run
     - Display Server
-        + xorg server
+        - xorg server
+            + libxext
+            + libxrandr
 - Build/Compilation essentials for development
     - GNU packages
          - Using package manager

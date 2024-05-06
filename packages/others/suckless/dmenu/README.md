@@ -25,9 +25,17 @@ Alternatives to dmenu includes
 
 ## Setup
 ### Dependencies
++ coreutils
++ fontconfig
++ freetype2
++ glibc
++ git
++ make
 - To run
     - Display Server
-        + xorg server
+        + libx11 : X11/xorg server
+        + libxft
+        + libxinerama
 - Build/Compilation essentials for development
     - GNU packages
          - Using package manager
@@ -104,6 +112,7 @@ Alternatives to dmenu includes
 ## Resources
 
 ## References
++ [ArchLinux - packages - extra - x86_64 - dmenu](https://archlinux.org/packages/extra/x86_64/dmenu/)
 + [ArchWiki - Dmenu](https://wiki.archlinux.org/title/dmenu#:~:text=dmenu%20is%20a%20fast%20and,line%20is%20printed%20to%20stdout.)
 
 ## Remarks
