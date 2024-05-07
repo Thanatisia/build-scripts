@@ -19,6 +19,7 @@
 + [2024-04-23](#2024-04-23)
 + [2024-05-03](#2024-05-03)
 + [2024-05-06](#2024-05-06)
++ [2024-05-07](#2024-05-07)
 
 ## Updates
 
@@ -280,4 +281,18 @@
 - Updates
     - Updated document 'pkglist.md'
         + Updated supported Package Manager to package 'rust-lang/rust-analyzer'
+
+### 2024-05-07
+#### 2041H
+- New
+    - Added new directory GitHub project author 'sharkdp' in 'packages/github/'
+        - Added new repository directory 'bat' for the cat alternative that is made in Rust
+            + Added new document 'README.md'
+            - Added new directory 'Makefiles' for storing all Makefiles
+                + Added new Makefile 'apt.Makefile' for apt-based distributions
+                + Added new Makefile 'pacman.Makefile' for pacman-based distributions
+- Updates
+    - Updated document 'pkglist.md'
+        + Updated supported Package Manager to package 'sharkdp/bat'
+        + edited build system used by 'rust-lang/rust-analyzer', 'rust-lang/rust' and 'rust-lang/cargo'
 

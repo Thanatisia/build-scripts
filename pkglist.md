@@ -86,15 +86,20 @@ for contributors, please specify your project/package names here if it is not ye
         + Package Managers: apt, pacman (WIP)
 - rust-lang
     - cargo
-        + Build System: Makefile (make)
+        + Build System: cargo
         + Method: Manual Compilation
         + Supported Package Managers: apt
     - rust
-        + Build System: Makefile (make)
+        + Build System: make, cargo
         + Method: Manual Compilation
         + Supported Package Managers: apt, pacman
     - rust-analyzer
-        + Build System: Makefile (make)
+        + Build System: cargo
+        + Method: Manual Compilation
+        + Supported Package Managers: apt, pacman
+- sharkdp
+    - bat
+        + Build System: cargo
         + Method: Manual Compilation
         + Supported Package Managers: apt, pacman
 - shellinabox
