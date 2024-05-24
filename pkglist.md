@@ -57,6 +57,11 @@ for contributors, please specify your project/package names here if it is not ye
     - x11vnc
         + Method: Manual Compilation
         + Package Managers: pacman
+- luals
+    - lua-language-server
+        + Build System: ninja
+        + Method: Manual Compilation
+        + Supported Package Managers: apt, pacman
 - neovim
     - neovim
         + Method: Manual Compilation

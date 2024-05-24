@@ -12,6 +12,11 @@ PKG_AUTHOR = neovim
 PKG_NAME = neovim
 BIN_NAME = nvim
 SRC_URL = https://github.com/$(PKG_AUTHOR)/$(PKG_NAME)
+PREFIX = /usr/local
+
+### Git options
+REPO_DIR = 
+CLONE_OPTS = --branch=release-0.10
 
 SHELL := /bin/bash
 .PHONY := help install-dependencies setup build install uninstall clean enter
@@ -35,7 +40,7 @@ install-dependencies:
 
 setup:
 	### Clone repository if doesnt exist
-	@test -d ${PKG_NAME} || git clone "${SRC_URL}"
+	@test -d ${PKG_NAME} || git clone ${CLONE_OPTS} "${SRC_URL}" ${REPO_DIR}
 
 build: setup
     ## Compile and Build/make the source code into an executable 
