@@ -20,6 +20,7 @@
 + [2024-05-03](#2024-05-03)
 + [2024-05-06](#2024-05-06)
 + [2024-05-07](#2024-05-07)
++ [2024-05-25](#2024-05-25)
 
 ## Updates
 
@@ -295,4 +296,33 @@
     - Updated document 'pkglist.md'
         + Updated supported Package Manager to package 'sharkdp/bat'
         + edited build system used by 'rust-lang/rust-analyzer', 'rust-lang/rust' and 'rust-lang/cargo'
+
+### 2024-05-25
+#### 0015H
+- New
+    - Added new directory GitHub project author 'luals' in 'packages/github/'
+        - Added new repository directory 'lua-language-server' for the Lua Language Server Protocol (LSP) Pack server
+            + Added new document 'README.md'
+            - Added new directory 'Makefiles' for storing all Makefiles
+                + Added new Makefile 'apt.Makefile' for apt-based distributions
+                + Added new Makefile 'pacman.Makefile' for pacman-based distributions
+
+- Updates
+    - Updated document 'pkglist.md'
+        + Added new GitHub package 'LuaLS/lua-language-server'
+    - Updated Makefile 'apt.Makefile' for GitHub package 'neovim/neovim' in 'packages/github/neovim/neovim/Makefiles'
+        + Updated Makefile with new variables to add modularity and customizability
+        - Added branch optional variable for 'git clone': For version control support (i.e. building for other branches, other versions)
+            + Current default: v0.10
+        + Fixed target 'uninstall'
+    - Updated Makefile 'pacman.Makefile' for GitHub package 'neovim/neovim' in 'packages/github/neovim/neovim/Makefiles'
+        + Updated Makefile with new variables to add modularity and customizability
+        - Added branch optional variable for 'git clone': For version control support (i.e. building for other branches, other versions)
+            + Current default: v0.10
+        + Fixed target 'uninstall'
+    - Updated Makefile 'pkg.Makefile' for GitHub package 'neovim/neovim' in 'packages/github/neovim/neovim/Makefiles'
+        + Updated Makefile with new variables to add modularity and customizability
+        - Added branch optional variable for 'git clone': For version control support (i.e. building for other branches, other versions)
+            + Current default: v0.10
+        + Fixed target 'uninstall'
 
