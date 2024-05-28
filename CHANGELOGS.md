@@ -21,6 +21,7 @@
 + [2024-05-06](#2024-05-06)
 + [2024-05-07](#2024-05-07)
 + [2024-05-25](#2024-05-25)
++ [2024-05-28](#2024-05-28)
 
 ## Updates
 
@@ -325,4 +326,9 @@
         - Added branch optional variable for 'git clone': For version control support (i.e. building for other branches, other versions)
             + Current default: v0.10
         + Fixed target 'uninstall'
+
+### 2024-05-28
+#### 1138H
+- New
+    + Added new document 'README.md' in 'packages/github/neovim/neovim'
 
